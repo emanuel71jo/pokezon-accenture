@@ -3,9 +3,11 @@ import { Styled } from "./styles";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { NotFound } from "../pages/NotFound";
+import { PokeCart } from "../pages/PokeCart";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { useAuth } from "../hooks/useAuth";
+
 
 function Routes() {
   const { auth } = useAuth();
@@ -20,6 +22,7 @@ function Routes() {
           ) : (
             <Route exact path="/" component={Login} />
           )}
+          <Route exact path="/pokecart" component={PokeCart} />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect from="*" to="/not-found" />
         </Switch>
