@@ -1,5 +1,9 @@
+import CarouselBanner from "../../components/CarouselBanner";
 import { Container } from "./styles";
 
 export function Home() {
-  return <Container>Home</Container>;
-}
+  return(
+  <Container>
+    <CarouselBanner/>
+  </Container>
+)}
