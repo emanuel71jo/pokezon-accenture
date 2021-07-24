@@ -11,7 +11,7 @@ import { useAuth } from "../hooks/useAuth";
 
 function Routes() {
   const { auth } = useAuth();
-
+  
   return (
     <Styled.AppLayout>
       <Header />

@@ -1,36 +1,31 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import img from "../../assets/banners/img.jpeg";
-import img1 from "../../assets/banners/img1.jpg";
-import img2 from "../../assets/banners/img2.jpeg";
+import banner from "../../assets/banners/img.jpeg";
+import segundoBanner from "../../assets/banners/img1.jpg";
+import terceiroBanner from "../../assets/banners/img2.jpeg";
 import NavBar from "../NavBar";
-
 
 function CarouselBanner() {
   return  (
    <>
-   <NavBar/>
-   
+   <NavBar/>   
     <Carousel
     autoPlay={true}
     showThumbs={false}
-   // infiniteLoop={true}
+    infiniteLoop={true}
     showStatus={false}
     transitionTime= {100}
     interval={10000}
     >
-      <div>
-        <img alt="img" src={img} />
+      <div key={1}>
+        <img alt="banner" src={banner} />
       </div>
-      <div>
-        <img alt="img" src={img1} />
+      <div key={2}>
+        <img src={segundoBanner} alt="segundo banner"/>
       </div>
-      <div>
-        <img alt="img" src={img2} />
+      <div key={3}>
+        <img alt="terceiro banner" src={terceiroBanner} />
       </div>
-      {/* <div> */}
-        {/* <img alt="img" src={img} /> */}
-      {/* </div> */}
     </Carousel>
     </>
   )
