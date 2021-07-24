@@ -76,6 +76,11 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  a {
+    text-decoration: none;
+    color: ${mixins.colors.white}
+  }
+
   ul {
     list-style: none;
   }

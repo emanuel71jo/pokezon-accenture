@@ -6,7 +6,8 @@ interface IHeaderComponentProps {
 }
 
 export const HeaderComponent = styled.header<IHeaderComponentProps>`
-  display: flex;
+background-color: ${mixins.colors.darkgray};
+display: flex;
   justify-content: ${(props) =>
     props.isAuthenticated ? "space-between" : "center"};
   align-items: center;
@@ -20,6 +21,7 @@ export const HeaderComponent = styled.header<IHeaderComponentProps>`
 `;
 
 export const Container = styled.div`
+  color: ${mixins.colors.white};
   display: flex;
   align-items: center;
   justify-content: center;

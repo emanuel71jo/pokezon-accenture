@@ -25,7 +25,7 @@ export const Form = styled.form`
 `;
 
 export const Title = styled.h1`
-  color: ${mixins.colors.primary};
+  color: ${mixins.colors.buttoncolor};
   font-size: ${mixins.typography.title};
   font-family: ${mixins.fonts.semi_bold};
 `;
@@ -49,7 +49,7 @@ export const Button = styled.button`
   color: ${mixins.colors.secondary};
   font-size: ${mixins.typography.paragraph};
   font-family: ${mixins.fonts.normal};
-  background-color: ${mixins.colors.primary};
+  background-color: ${mixins.colors.buttoncolor};
 
   width: 100%;
   height: 3rem;
@@ -62,20 +62,26 @@ export const Button = styled.button`
   }
 
   &:disabled {
-    background-color: ${mixins.colors.gray};
-    opacity: 0.5;
+    background-color: ${mixins.colors.buttoncolor};
     cursor: not-allowed;
   }
 `;
 
 export const SignUp = styled(Link)`
   text-decoration: none;
-  color: ${mixins.colors.primary};
+  color: ${mixins.colors.darkblue};
   font-size: ${mixins.typography.paragraph};
   font-family: ${mixins.fonts.normal};
-
   align-self: flex-end;
+
+  &:hover {
+    color:  ${mixins.colors.blue};
+    opacity: 0.8;
+  }
+
 `;
+
+
 
 export const Error = styled.p`
   font-size: 0.7rem;

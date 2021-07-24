@@ -6,7 +6,14 @@ export const mixins = {
     green: "green",
     yellow: "yellow",
     red: "red",
-    gray: "gray",
+    gray: "#656565",
+    white: "#FAFAFA",
+    darkblue: "#02455C",
+    blue: "#007EA9",
+    buttoncolor: "#FD4602",
+    orange: "#FDBCA4",
+    darkgray: "#1A1A1A",
+
   },
   fonts: {
     bold: "Roboto-Bold",

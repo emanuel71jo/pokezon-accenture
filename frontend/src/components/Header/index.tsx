@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import { useAuth } from "../../hooks/useAuth";
 import { FiShoppingCart, FiLogOut, FiUser } from "react-icons/fi";
 
+
 export function Header() {
   const { auth, signOut } = useAuth();
 
@@ -16,16 +17,22 @@ export function Header() {
             <p>0 itens</p>
           </div>
           <button onClick={signOut}>
-            <FiShoppingCart size="1.3rem" />
+            <FiShoppingCart color="white" size="1.3rem" />
           </button>
           <button onClick={signOut}>
-            <FiUser size="1.3rem" />
+            <FiUser color="white" size="1.3rem" />
           </button>
           <button onClick={signOut}>
-            <FiLogOut size="1.3rem" />
+            <FiLogOut color="white" size="1.3rem" />
           </button>
         </Container>
+
+
       )}
+
+
+
     </HeaderComponent>
+      
   );
 }
