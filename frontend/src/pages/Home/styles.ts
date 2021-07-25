@@ -4,12 +4,17 @@ import { mixins } from "../../styles/mixins";
 export const Container = styled.div``;
 
 export const ContainerCard = styled.div `
-    display: flex;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 1rem;
+  justify-content: center
 `;
 
 export const Card = styled.div `
-width: 220px;
-height: 339px;
+width: 14rem;
+height: 20rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -18,7 +23,6 @@ background: #FFFFFF;
 border: 3px solid #EBF227;
 box-sizing: border-box;
 border-radius: 15px;
-
 
 `;
 

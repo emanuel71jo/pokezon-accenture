@@ -1,10 +1,13 @@
 import CarouselBanner from "../../components/CarouselBanner";
+import PromocaoCarousel from "../../components/PromocaoCarousel";
 import { Card, Container, ContainerCard, Button } from "./styles";
 
 export function Home() {
   return(
   <Container>
     <CarouselBanner/>
+    
+    <PromocaoCarousel/>
     <ContainerCard>
       <div>
       <input type="text" />

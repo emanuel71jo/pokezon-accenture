@@ -63,7 +63,7 @@ export default createGlobalStyle`
   }
 
   #root {
-    min-width: 900px;
+    // min-width: 900px;
     width: 100vw;
     margin: 0 auto;
   }

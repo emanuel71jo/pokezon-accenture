@@ -9,7 +9,7 @@ export const Styled = {
   `,
   PageLayout: styled.div`
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
   `,

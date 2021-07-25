@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
 export const FooterComponent = styled.footer`
-  position: relative;
+  padding: 1.5rem;
   width: 100%;
   bottom: 0;
   z-index: 1000;
