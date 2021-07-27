@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { mixins } from '../../styles/mixins'
+import styled from "styled-components";
+import { mixins } from "../../styles/mixins";
 
 export const BannerPreco = styled.div`
   margin-top: 0.5rem;
@@ -10,9 +10,9 @@ export const BannerPreco = styled.div`
   color: white;
   width: 85%;
   background-color: ${mixins.colorspokemons.water};
-`
+`;
 
-export const Item = styled.button`
+export const Item = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,6 @@ export const Item = styled.button`
   height: 21rem;
   width: 80%;
   background-color: #fff;
-  border: none;
   img {
     height: 5.5rem;
   }
@@ -63,4 +62,4 @@ export const Item = styled.button`
       cursor: not-allowed;
     }
   }
-`
+`;

@@ -1,26 +1,26 @@
-import styled from 'styled-components'
-import { mixins } from '../../styles/mixins'
+import styled from "styled-components";
+import { mixins } from "../../styles/mixins";
 
 export const Subtitulo = styled.p`
   text-transform: uppercase;
   font-size: 0.7rem;
   margin-bottom: 1rem;
-`
+`;
 
 export const Titulo = styled.h2`
   border-bottom: 0.2rem solid black;
   display: inline-block;
   text-transform: uppercase;
   font-size: 1.8rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #1a1a1a;
 
   margin-top: 6rem;
   margin-bottom: 1rem;
   margin-left: 5.5rem;
-`
+`;
 
-export const Item = styled.button`
+export const Item = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,6 @@ export const Item = styled.button`
   padding: 1rem 0;
   margin: 1rem 0;
   border-radius: 1rem;
-  border: none;
   font-size: 1rem;
   img {
     height: 5.5rem;
@@ -70,4 +69,4 @@ export const Item = styled.button`
       cursor: not-allowed;
     }
   }
-`
+`;
