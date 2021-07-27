@@ -1,6 +1,6 @@
-import Routes from "./routes";
-import GlobalStyle from "./styles/global";
-import { BrowserRouter } from "react-router-dom";
+import Routes from './routes'
+import GlobalStyle from './styles/global'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Routes />
       <GlobalStyle />
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

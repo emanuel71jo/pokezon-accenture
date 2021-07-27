@@ -1,26 +1,30 @@
-import { useFormik } from "formik";
-import { useAuth } from "../../hooks/useAuth";
-import { LoginSchema } from "../../validations/validationLogin";
-import { Button, Container, Error, Form, Input, SignUp, Title } from "./styles";
+import { useFormik } from 'formik'
+import { useHistory } from 'react-router-dom'
+import { useAuth } from '../../hooks/useAuth'
+import { LoginSchema } from '../../validations/validationLogin'
+import { Button, Container, Error, Form, Input, SignUp, Title } from './styles'
 
 export function Login() {
-  const { signIn } = useAuth();
+  const history = useHistory()
+  const { signIn } = useAuth()
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     onSubmit: async (values) => {
-      await signIn(values);
+      history.push('/home')
+      await signIn(values)
     },
     validationSchema: LoginSchema,
-  });
+  })
 
   const isDisabled =
-    formik.values.email === "" ||
-    formik.values.password === "" ||
-    !formik.isValid;
+    formik.values.email === '' ||
+    formik.values.password === '' ||
+    !formik.isValid
+
   return (
     <Container>
       <Form onSubmit={formik.handleSubmit}>
@@ -52,5 +56,5 @@ export function Login() {
         <SignUp to="/sign-up">Cadastra-se</SignUp>
       </Form>
     </Container>
-  );
+  )
 }

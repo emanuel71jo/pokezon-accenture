@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Styled = {
   AppLayout: styled.div`
@@ -13,4 +13,4 @@ export const Styled = {
     display: flex;
     flex-direction: column;
   `,
-};
+}

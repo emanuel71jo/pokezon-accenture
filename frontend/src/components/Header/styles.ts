@@ -1,24 +1,18 @@
-import styled from "styled-components";
-import { mixins } from "../../styles/mixins";
+import styled from 'styled-components'
+import { mixins } from '../../styles/mixins'
 
-interface IHeaderComponentProps {
-  isAuthenticated: boolean;
-}
-
-export const HeaderComponent = styled.header<IHeaderComponentProps>`
-background-color: ${mixins.colors.darkgray};
-display: flex;
-  justify-content: ${(props) =>
-    props.isAuthenticated ? "space-between" : "center"};
+export const HeaderComponent = styled.header`
+  background-color: ${mixins.colors.darkgray};
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 8rem;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
 
   img {
     width: 8rem;
   }
-`;
+`
 
 export const Container = styled.div`
   color: ${mixins.colors.white};
@@ -53,4 +47,4 @@ export const Container = styled.div`
     text-decoration: none;
     background: transparent;
   }
-`;
+`

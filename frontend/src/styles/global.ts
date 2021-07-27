@@ -1,5 +1,5 @@
-import { mixins } from "./mixins";
-import { createGlobalStyle } from "styled-components";
+import { mixins } from './mixins'
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   @import "~bootstrap/scss/bootstrap";
@@ -97,4 +97,4 @@ export default createGlobalStyle`
     }
   }
 
-`;
+`

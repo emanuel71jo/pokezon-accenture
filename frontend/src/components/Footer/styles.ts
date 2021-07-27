@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { mixins } from "../../styles/mixins";
+import styled from 'styled-components'
+import { mixins } from '../../styles/mixins'
 
 export const FooterComponent = styled.footer`
   padding: 1.5rem;
@@ -16,4 +16,4 @@ export const FooterComponent = styled.footer`
     font-size: ${mixins.typography.paragraph};
     color: ${mixins.colors.white};
   }
-`;
+`

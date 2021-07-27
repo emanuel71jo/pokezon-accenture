@@ -1,55 +1,19 @@
-import React from "react";
 import {
   MdDelete,
   MdAddCircleOutline,
   MdRemoveCircleOutline,
-} from "react-icons/md";
-import { string } from "yup/lib/locale";
+} from 'react-icons/md'
+import { useShopping } from '../../hooks/useShopping'
 
-//import { useCart } from "../hooks/useCart";
-//import { formatPrice } from "../util/format";
-import { Container, ProductTable, Total } from "./styles";
+import { Container, ProductTable, Total } from './styles'
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  amount: number;
-}
-
-const Cart = (): JSX.Element => {
-  /*const { cart, removeProduct, updateProductAmount } = useCart();
-
-  const cartFormatted = cart.map((product) => ({
-    ...product,
-    priceFormatted: formatPrice(product.price),
-    subTotal: formatPrice(product.amount * product.price),
-  }));
-
-  const total = formatPrice(
-    cart.reduce((sumTotal, product) => {
-      sumTotal += product.amount * product.price;
-      return sumTotal;
-    }, 0)
-  );
-
-  function handleProductIncrement(product: Product) {
-    updateProductAmount({ productId: product.id, amount: product.amount + 1 });
-  } 
-
-  function handleProductDecrement(product: Product) {
-    if (product.amount <= 1) return;
-
-    updateProductAmount({
-      productId: product.id,
-      amount: product.amount - 1,
-    });
-  }
-
-  function handleRemoveProduct(productId: number) {
-    removeProduct(productId);
-  } */
+export function Cart() {
+  const {
+    shopping,
+    addItemToShopping,
+    removeAllItemFromShopping,
+    removeItemFromShopping,
+  } = useShopping()
 
   return (
     <Container>
@@ -64,22 +28,22 @@ const Cart = (): JSX.Element => {
           </tr>
         </thead>
         <tbody>
-          {/* {cartFormatted.map((product) => ( */}
-            <tr data-testid="product">
+          {shopping.map((item, index) => (
+            <tr key={index} data-testid="product">
               <td>
-                <img src={" "} alt={" "} />
+                <img src={item.item.image} alt={item.item.name} />
               </td>
               <td>
-                <strong>{" "}</strong>
-                <span>{" "}</span>
+                <strong>{item.item.id}</strong>
+                <span>{item.item.name}</span>
               </td>
               <td>
                 <div>
                   <button
                     type="button"
                     data-testid="decrement-product"
-                    
-                    
+                    onClick={() => removeItemFromShopping(item.item)}
+                    disabled={item.count === 1}
                   >
                     <MdRemoveCircleOutline size={20} />
                   </button>
@@ -87,44 +51,40 @@ const Cart = (): JSX.Element => {
                     type="text"
                     data-testid="product-amount"
                     readOnly
-                    value={" "}
+                    value={item.count}
                   />
                   <button
                     type="button"
                     data-testid="increment-product"
-                    
+                    onClick={() => addItemToShopping(item.item)}
                   >
                     <MdAddCircleOutline size={20} />
                   </button>
                 </div>
               </td>
               <td>
-                <strong>{" "}</strong>
+                <strong>R$ 10000</strong>
               </td>
               <td>
                 <button
                   type="button"
                   data-testid="remove-product"
-                  
+                  onClick={() => removeAllItemFromShopping(item.item)}
                 >
                   <MdDelete size={20} />
                 </button>
               </td>
             </tr>
-          {/* ))} */}
+          ))}
         </tbody>
       </ProductTable>
-
       <footer>
         <button type="button">Finalizar pedido</button>
-
         <Total>
           <span>TOTAL</span>
-          <strong>{" "}</strong>
+          <strong>R$ 100000,00</strong>
         </Total>
       </footer>
     </Container>
-  );
-};
-
-export default Cart;
+  )
+}
