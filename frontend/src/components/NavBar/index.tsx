@@ -8,19 +8,15 @@ function NavBar () {
                    <p>Todos</p> 
                 </Link>
                
-                <Link href="" >
+                <Link href="#maisVendidos" >
                    <p> Mais vendidos </p>
                 </Link>
                
-                <Link href="" >
+                <Link href="#promocoes" >
                     Promoções
                 </Link>
-                
-                <Link href="" >
-                    Lançamentos
-                </Link>
-
-                <Link href="" >
+                                
+                <Link href="#lendarios" >
                     Lendários
                 </Link>
             </Ul>

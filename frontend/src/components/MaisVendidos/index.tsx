@@ -1,7 +1,7 @@
-import { Item, BannerPreco } from './styles';
+import { Item, Titulo, Subtitulo } from './styles';
 import Carousel from 'react-elastic-carousel'
-import PokesPromotion from '../../services/DatasCarousel/PokesPromotion';
-import './promo.css'
+import PokesMaisVendidos from '../../services/DatasCarousel/PokesMaisVendidos';
+import '../PromocaoCarousel/promo.css' 
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -12,29 +12,29 @@ const breakPoints = [
 ];
 
 
-const PromocaoCarousel= () => {
+const MaisVendidos= () => {
 
   return(
-    <div id="promocoes">
-      <h2 className="titulo" >promoções especiais</h2>
+    <div id="maisVendidos">
+      <Titulo>Mais vendidos</Titulo>
 
     <Carousel  isRTL={false} breakPoints={breakPoints}>
-    {PokesPromotion.map((Pokemon) => (
+    {PokesMaisVendidos.map((Pokemon) => (
             <Item key={Pokemon.id}>
               <img src={Pokemon.image} alt="Pokemon Promoção"/>
               <h2> {Pokemon.name} </h2>
-              <p className='subtitulo'> {Pokemon.types} | {Pokemon.abilities} </p>
-              <BannerPreco>Preço imperdível!</BannerPreco>
+              <Subtitulo> {Pokemon.types} | {Pokemon.abilities} </Subtitulo>
 
               <h3>R$ 18000,00</h3>
-              <p className='subtitulo' >Em até 12x sem juros</p>
+              <Subtitulo>Em até 12x sem juros</Subtitulo>
               <button> Adicionar ao carrinho </button>
               <p className="linkdetalhe">+ detalhes</p>
             </Item>
           ))}
+
    </Carousel>
    </div>
   )
 }
 
-export default PromocaoCarousel;
+export default MaisVendidos;

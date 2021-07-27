@@ -15,6 +15,28 @@ export const mixins = {
     darkgray: "#1A1A1A",
 
   },
+
+  colorspokemons: {
+    dragon: "#44929E",
+    ice: "#83DBFE",
+    flying: "#9BB9D3",
+    water: "#4AABE0",
+    stell: "#43C89C",
+    poison: "#A16AE1",
+    ghost: "#946997",
+    dark: "#5B597E",
+    normal: "#D49DAC",
+    fairy: "#F6116C",
+    psychic: "#FF1995",
+    fighthing: "#FB6635",
+    fire: "#D44E1C",
+    grass: "#41D831",
+    bug: "#11813C",
+    electric: "#EBF227",
+    ground: "#B0742C",
+    rock: "#4A190A",
+  },
+
   fonts: {
     bold: "Roboto-Bold",
     semi_bold: "Nunito-SemiBold",

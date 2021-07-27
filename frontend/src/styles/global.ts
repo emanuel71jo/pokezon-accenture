@@ -48,13 +48,13 @@ export default createGlobalStyle`
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background: ${mixins.colors.primary};
+        background: ${mixins.colors.gray};
         border:4px solid #fff;
     }
   }
 
   body {
-    background: ${mixins.colors.background};
+    background: ${mixins.colors.white};
     --webkit-font-smoothing: antialiased;
   }
 

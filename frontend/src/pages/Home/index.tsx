@@ -1,6 +1,8 @@
 import CarouselBanner from "../../components/CarouselBanner";
 import PromocaoCarousel from "../../components/PromocaoCarousel";
+import LendariosCarousel from "../../components/LendariosCarousel";
 import { Card, Container, ContainerCard, Button } from "./styles";
+import MaisVendidos from "../../components/MaisVendidos";
 
 export function Home() {
   return(
@@ -8,6 +10,8 @@ export function Home() {
     <CarouselBanner/>
     
     <PromocaoCarousel/>
+    <MaisVendidos/>
+    <LendariosCarousel/>
     <ContainerCard>
       <div>
       <input type="text" />
