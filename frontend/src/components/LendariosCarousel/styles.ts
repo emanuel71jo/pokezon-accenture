@@ -14,7 +14,7 @@ export const Titulo = styled.h2`
 
   margin-top: 4rem;
   margin-bottom: 1rem;
-  margin-left: 5.5rem;
+  margin-left: 8rem;
 `;
 
 export const Item = styled.div`
@@ -25,7 +25,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 80%;
+  width: 74%;
   background-color: white;
   h3 {
     color: rgb(255,192,0);
@@ -44,8 +44,7 @@ export const Item = styled.div`
 
   &:hover {
     box-shadow: 5px 5px 10px 1px rgb(244 196 48/ 100%);
-    height: 22rem;
-    width: 85%;
+    width: 78%;
   }
 
   `;

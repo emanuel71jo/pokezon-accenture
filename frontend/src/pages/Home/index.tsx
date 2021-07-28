@@ -1,7 +1,7 @@
 import CarouselBanner from '../../components/CarouselBanner'
 import PromocaoCarousel from '../../components/PromocaoCarousel'
 import LendariosCarousel from '../../components/LendariosCarousel'
-import { Card, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
+import { Card, Subtitulo, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
 import MaisVendidos from '../../components/MaisVendidos'
 
 export function Home() {
@@ -27,17 +27,22 @@ export function Home() {
       <ContainerCard>
         
 
-        <Card>
-          <img src="" alt="" />
-          <h2> Pikachu </h2>
-          <p> TIPO | HABILIDADE </p>
-          <h3>R$ 18000,00</h3>
-          <p>Em até 12x sem juros</p>
+      <Card>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pokemon" />
+            <h2> Pikachu </h2>
+            <Subtitulo>
+            TIPO | HABILIDADE 
+            </Subtitulo>
 
-          <Button> Adicionar ao carrinho </Button>
+            <h3>R$ 18000,00</h3>
+            <Subtitulo>Em até 12x sem juros</Subtitulo>
+            <Button> Adicionar ao carrinho </Button>
+            <ButtonDetalhes>+ detalhes</ButtonDetalhes>
+          </Card>
 
-          <ButtonDetalhes>+ detalhes</ButtonDetalhes>
-        </Card>
+      
+
+
       </ContainerCard>
 
     </Container>

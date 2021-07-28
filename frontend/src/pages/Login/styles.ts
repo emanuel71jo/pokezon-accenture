@@ -32,7 +32,6 @@ export const Title = styled.h1`
 
 export const Input = styled.input`
   border: none;
-
   border-bottom: 1px solid ${mixins.colors.gray};
   width: 100%;
   padding: 0.5rem 0;
@@ -72,7 +71,7 @@ export const SignUp = styled(Link)`
   color: ${mixins.colors.darkblue};
   font-size: ${mixins.typography.paragraph};
   font-family: ${mixins.fonts.normal};
-  align-self: flex-end;
+  align-self: center;
 
   &:hover {
     color: ${mixins.colors.blue};

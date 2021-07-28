@@ -15,6 +15,10 @@
  height: 25rem;
 }
 
+.rec .rec-carousel {
+  width: 85%;
+ margin-left: 1.8rem;
+}
 
 .titulo {
   display: inline-block;
@@ -23,7 +27,7 @@
 
   margin-top: 4rem;
   margin-bottom: 1rem;
-  margin-left: 5.5rem;
+  margin-left: 8rem;
 }
 
 .linkdetalhe {

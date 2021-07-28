@@ -13,7 +13,7 @@ export const Titulo = styled.h2`
   color: #656565;
   margin-top: 4rem;
   margin-bottom: 1rem;
-  margin-left: 5.5rem;
+  margin-left: 8rem;
 `;
 
 export const Item = styled.div`
@@ -22,10 +22,10 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 80%;
+  width: 74%;
  
   color: black;
-  box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 30%);
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin: 1rem 0;
@@ -41,9 +41,8 @@ export const Item = styled.div`
   transition: 0.3s;
 
   &:hover {
-    box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 80%);
-    height: 22rem;
-    width: 83%;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.6);
+    width: 78%;
   }
 
 
