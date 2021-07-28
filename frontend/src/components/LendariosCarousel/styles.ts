@@ -48,26 +48,35 @@ export const Item = styled.div`
     width: 85%;
   }
 
-  button {
-    margin-top: 1.2rem;
-    color: black;
-    font-size: ${mixins.typography.paragraph};
-    font-family: ${mixins.fonts.normal};
-    background: linear-gradient(288deg, rgba(255,214,0,1) 10%, rgba(255,248,0,1) 64%, rgba(255,192,0,1) 98%);
+  `;
+  
+  export const Button = styled.button`
+  margin-top: 1.2rem;
+  color: black;
+  font-size: ${mixins.typography.paragraph};
+  font-family: ${mixins.fonts.normal};
+  background: linear-gradient(288deg, rgba(255,214,0,1) 10%, rgba(255,248,0,1) 64%, rgba(255,192,0,1) 98%);
 
-    width: 70%;
-    height: 2rem;
-    border: none;
-    border-radius: 8px;
-    transition: 0.2s;
+  width: 70%;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  transition: 0.2s;
 
-    &:hover:not(:disabled) {
-      opacity: 0.8;
-    }
-
-    &:disabled {
-      background-color: ${mixins.colors.buttoncolor};
-      cursor: not-allowed;
-    }
+  &:hover:not(:disabled) {
+    opacity: 0.8;
   }
-`;
+
+  &:disabled {
+    background-color: ${mixins.colors.buttoncolor};
+    cursor: not-allowed;
+  }
+
+
+`
+
+export const ButtonDetalhes = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 0.8rem;
+`

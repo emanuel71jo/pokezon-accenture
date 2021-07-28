@@ -1,10 +1,11 @@
 import CarouselBanner from '../../components/CarouselBanner'
 import PromocaoCarousel from '../../components/PromocaoCarousel'
 import LendariosCarousel from '../../components/LendariosCarousel'
-import { Card, Container, ContainerCard, Search, Tipos } from './styles'
+import { Card, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
 import MaisVendidos from '../../components/MaisVendidos'
 
 export function Home() {
+  const typesButtons = ["Fire", "Dragon", "Bug", "Eletric", "Fairy", "Ice", "Poison", "Rock", "Grass", "Normal", "Ghost", "Water", "Steel", "Fighthing", "Flying", "Ground", "Psychic"]
   return (
     <Container>
       <CarouselBanner />
@@ -13,33 +14,15 @@ export function Home() {
       <LendariosCarousel />
      
       <Search>
-            <div>
+            <Input>
               <input type="text" placeholder="Pesquisar" />
-            </div>
-
-          <div> 
-            {/* <Tipos props='fire' >Fire</Tipos>
-            <p props="dragon" >Dragon</p>
-            <Tipos>Electric</Tipos>
-            <Tipos>Bug</Tipos>
-            <Tipos>Fairy</Tipos> */}
-            <p>Ice</p>
-            <p>Poison</p>
-            <p>Rock</p>
-            <p>Grass</p>
-            <p>Normal</p>
-            <p>Ghost</p>
-            <p>Water</p>
-            <p>Steel</p>
-            <p>Fighthing</p>
-            <p>Flying</p>
-            <p>Ground</p>
-            <p>Psychic</p>
-          </div>
-
-        
-        </Search>
-
+            </Input>
+          <ButtonsTypes> 
+          {typesButtons.map(type =>(
+            <TypeButton color={type}> {type} </TypeButton>
+          ))}
+          </ButtonsTypes>
+      </Search>
 
       <ContainerCard>
         
@@ -51,9 +34,9 @@ export function Home() {
           <h3>R$ 18000,00</h3>
           <p>Em até 12x sem juros</p>
 
-          <button> Adicionar ao carrinho </button>
+          <Button> Adicionar ao carrinho </Button>
 
-          <p>+ detalhes</p>
+          <ButtonDetalhes>+ detalhes</ButtonDetalhes>
         </Card>
       </ContainerCard>
 

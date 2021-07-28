@@ -11,7 +11,6 @@ export const Titulo = styled.h2`
   display: inline-block;
   font-size: 1.3rem;
   color: #656565;
-
   margin-top: 4rem;
   margin-bottom: 1rem;
   margin-left: 5.5rem;
@@ -47,26 +46,35 @@ export const Item = styled.div`
     width: 83%;
   }
 
-  button {
-    margin-top: 1.2rem;
-    color: white;
-    font-size: ${mixins.typography.paragraph};
-    font-family: ${mixins.fonts.normal};
-    background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
 
-    width: 70%;
-    height: 2rem;
-    border: none;
-    border-radius: 8px;
-    transition: 0.2s;
-
-    &:hover:not(:disabled) {
-      opacity: 0.8;
-    }
-
-    &:disabled {
-      background-color: ${mixins.colors.buttoncolor};
-      cursor: not-allowed;
-    }
-  }
 `;
+
+export const Button = styled.button`
+margin-top: 1.2rem;
+color: white;
+font-size: ${mixins.typography.paragraph};
+font-family: ${mixins.fonts.normal};
+background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
+
+width: 70%;
+height: 2rem;
+border: none;
+border-radius: 8px;
+transition: 0.2s;
+
+&:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+&:disabled {
+  background-color: ${mixins.colors.buttoncolor};
+  cursor: not-allowed;
+}
+
+`
+
+export const ButtonDetalhes = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 0.8rem;
+`

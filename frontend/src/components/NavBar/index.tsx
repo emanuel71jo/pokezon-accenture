@@ -12,7 +12,7 @@ function NavBar() {
           <p> Mais vendidos </p>
         </Link>
 
-        <Link href="#promocoes">Promoções</Link>
+        <Link href="#promocao">Promoções</Link>
 
         <Link href="#lendarios">Lendários</Link>
       </Ul>

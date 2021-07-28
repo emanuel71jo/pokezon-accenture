@@ -1,7 +1,7 @@
-import { Item, BannerPreco } from "./styles";
+import { Item, BannerPreco, ButtonDetalhes, Button} from "./styles";
 import Carousel from "react-elastic-carousel";
 import PokesPromotion from "../../services/DatasCarousel/PokesPromotion";
-import "./promo.css";
+import "./resetCarousel.css";
 import { useShopping } from "../../hooks/useShopping";
 
 const breakPoints = [
@@ -15,8 +15,8 @@ const PromocaoCarousel = () => {
   const { addItemToShopping } = useShopping();
 
   return (
-    <div id="container">
-      <h2 className="titulo">promoções especiais</h2>
+    <div id="promocao">
+      <h2 className="titulo">Promoções Especiais</h2>
       <Carousel isRTL={false} breakPoints={breakPoints}>
         {PokesPromotion.map((Pokemon) => (
           <Item key={Pokemon.id}>
@@ -30,11 +30,11 @@ const PromocaoCarousel = () => {
 
             <h3>R$ 18000,00</h3>
             <p className="subtitulo">Em até 12x sem juros</p>
-            <button onClick={() => addItemToShopping(Pokemon)}>
+            <Button onClick={() => addItemToShopping(Pokemon)}>
               {" "}
               Adicionar ao carrinho{" "}
-            </button>
-            <p className="linkdetalhe">+ detalhes</p>
+            </Button>
+            <ButtonDetalhes>+ detalhes</ButtonDetalhes>
           </Item>
         ))}
       </Carousel>

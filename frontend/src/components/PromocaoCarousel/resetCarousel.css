@@ -1,4 +1,4 @@
-.rec .rec-arrow:hover:enabled,
+.rec .rec-arrow:hover:enabled, .rec
 .rec-arrow:focus:enabled {
   background-color: gray;
 }
@@ -15,10 +15,6 @@
  height: 25rem;
 }
 
-.subtitulo {
-  text-transform: uppercase;
-  font-size: 0.7rem;
-}
 
 .titulo {
   display: inline-block;

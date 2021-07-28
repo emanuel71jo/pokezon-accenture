@@ -40,7 +40,9 @@ export const Item = styled.div`
   border-radius: 1rem;
   font-size: 1rem;
 
-  button {
+  `;
+  
+export const Button = styled.button`
     margin-top: 1rem;
     color: white;
     font-size: ${mixins.typography.paragraph};
@@ -61,5 +63,12 @@ export const Item = styled.div`
       background-color: ${mixins.colors.buttoncolor};
       cursor: not-allowed;
     }
-  }
-`;
+
+`
+
+export const ButtonDetalhes = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 0.8rem;
+  
+`

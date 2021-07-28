@@ -1,7 +1,7 @@
-import { Item, Titulo, Subtitulo } from "./styles";
+import { Item, Titulo, Subtitulo, ButtonDetalhes, Button } from "./styles";
 import Carousel from "react-elastic-carousel";
 import PokesLegends from "../../services/DatasCarousel/PokesLegends";
-import "../PromocaoCarousel/promo.css";
+import "../PromocaoCarousel/resetCarousel.css";
 import { useShopping } from "../../hooks/useShopping";
 
 const breakPoints = [
@@ -30,11 +30,11 @@ const LendariosCarousel = () => {
 
             <h3>R$ 18000,00</h3>
             <Subtitulo>Em até 12x sem juros</Subtitulo>
-            <button onClick={() => addItemToShopping(Pokemon)}>
+            <Button onClick={() => addItemToShopping(Pokemon)}>
               {" "}
               Adicionar ao carrinho{" "}
-            </button>
-            <p className="linkdetalhe">+ detalhes</p>
+            </Button>
+            <ButtonDetalhes>+ detalhes</ButtonDetalhes>
           </Item>
         ))}
       </Carousel>
