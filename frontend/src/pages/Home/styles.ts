@@ -27,9 +27,9 @@ const handleBackgroundType = (color: string) => {
 
 
 export const TypeButton = styled.button`
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       background-color: ${({color}) => handleBackgroundType(color!)};
-      border-radius: 0.3rem;
+      border-radius: 0.5rem;
       padding: 0.3rem;
       color: white;
       border: none;
@@ -59,17 +59,18 @@ export const Input = styled.div`
   align-items: center;
   justify-content: center;
   input{
+    height: 1.8rem;
     padding: 0.4rem;
-    width: 15rem;
+    width: 12rem;
     outline: none;
-    border: solid 0.2rem ${mixins.colors.gray};
-    border-radius: 0.2rem;
+    border: solid 0.18rem ${mixins.colors.gray};
+    border-radius: 0.4rem;
   }
 `
 
 export const ButtonsTypes = styled.div`
   display: inline-block;
-  width: 50%;
+  
   @media screen and (max-width: 425px){
     width: 100%;
     margin: 2rem 0 0;
@@ -87,14 +88,31 @@ export const ContainerCard = styled.div`
   justify-content: center;
 `
 
+export const Subtitulo = styled.p`
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 0.7rem;
+`;
+
 export const Card = styled.div`
+
+color: black;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 21rem;
-width: 15rem;
-background-color: #fff;
+height: 18rem;
+width: 17%;
+background-color: white;
+h3 {
+  color: black;
+}
+
+box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+padding: 1rem 0;
+margin: 1rem 0;
+border-radius: 1rem;
+font-size: 1rem;
 img {
   height: 5.5rem;
 }
@@ -102,31 +120,22 @@ img {
 transition: 0.3s;
 
 &:hover {
-  box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 100%);
-  height: 22rem;
-  width: 19%;
-}
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.8);
 
-box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 30%);
-padding-top: 1rem;
-padding-bottom: 1rem;
-margin-bottom: 1rem;
-margin-top: 1rem;
-border-radius: 1rem;
-font-size: 1rem;
+}
 
 
 `
 
 export const Button = styled.button`
 
-margin-top: 1rem;
+
 color: white;
 font-size: ${mixins.typography.paragraph};
 font-family: ${mixins.fonts.normal};
 background: gray;
 
-width: 80%;
+width: 70%;
 height: 2rem;
 border: none;
 border-radius: 8px;
