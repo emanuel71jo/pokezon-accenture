@@ -1,12 +1,38 @@
 import { useFormik } from "formik";
+import { useCallback, useState } from "react";
+import { useDropzone } from "react-dropzone";
 import { useHistory } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import { LoginSchema } from "../../validations/validationLogin";
-import { Button, Container, Error, Form, Input, SignIn, Title } from "./styles";
+import ProfileImg from "../../assets/profile-img.png";
+import { SignUpSchema } from "../../validations/validationSignUp";
+import {
+  Button,
+  Container,
+  ContainerInput,
+  Error,
+  Form,
+  InfoInputText,
+  Input,
+  ProfileImage,
+  SignIn,
+  Title,
+  WrapperFields,
+  WrapperImg,
+} from "./styles";
 
 export function SignUp() {
   const history = useHistory();
-  const { signIn } = useAuth();
+
+  const [file, setFile] = useState<any>();
+
+  const onDrop = useCallback((acceptedFiles) => {
+    setFile(acceptedFiles[0]);
+  }, []);
+
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    accept: ".png,.jpg,.jpeg",
+    multiple: false,
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -17,41 +43,64 @@ export function SignUp() {
       lastName: "",
     },
     onSubmit: async (values) => {
-      history.push("/home");
-      await signIn(values);
+      history.push("/");
     },
-    validationSchema: LoginSchema,
+    validationSchema: SignUpSchema,
   });
 
   const isDisabled =
     formik.values.email === "" ||
     formik.values.password === "" ||
+    formik.values.firstName === "" ||
+    formik.values.lastName === "" ||
+    formik.values.confirmPassword === "" ||
     !formik.isValid;
+
+  const getPreviewImg = () => {
+    const objectUrl = URL.createObjectURL(file);
+
+    return objectUrl;
+  };
 
   return (
     <Container>
       <Form onSubmit={formik.handleSubmit}>
-        <Title>Cadastrar</Title>
-        <Input
-          name="firstName"
-          placeholder="Nome"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-          onBlur={formik.handleBlur}
-        />
-        {formik.errors.firstName && formik.touched.firstName && (
-          <Error>{formik.errors.firstName}</Error>
-        )}
-        <Input
-          name="lastName"
-          placeholder="Sobrenome"
-          onChange={formik.handleChange}
-          value={formik.values.lastName}
-          onBlur={formik.handleBlur}
-        />
-        {formik.errors.lastName && formik.touched.lastName && (
-          <Error>{formik.errors.lastName}</Error>
-        )}
+        <Title>Faça seu cadastro</Title>
+        <WrapperImg {...getRootProps()}>
+          <input {...getInputProps()} />
+          {file ? (
+            <ProfileImage src={getPreviewImg()} alt={file.name} />
+          ) : (
+            <ProfileImage src={ProfileImg} alt="Imagem de Perfil" />
+          )}
+          <InfoInputText>Clique para adicionar uma foto</InfoInputText>
+        </WrapperImg>
+        <WrapperFields>
+          <ContainerInput>
+            <Input
+              name="firstName"
+              placeholder="Nome"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+              onBlur={formik.handleBlur}
+            />
+            {formik.errors.firstName && formik.touched.firstName && (
+              <Error>{formik.errors.firstName}</Error>
+            )}
+          </ContainerInput>
+          <ContainerInput>
+            <Input
+              name="lastName"
+              placeholder="Sobrenome"
+              onChange={formik.handleChange}
+              value={formik.values.lastName}
+              onBlur={formik.handleBlur}
+            />
+            {formik.errors.lastName && formik.touched.lastName && (
+              <Error>{formik.errors.lastName}</Error>
+            )}
+          </ContainerInput>
+        </WrapperFields>
         <Input
           name="email"
           placeholder="E-mail"
@@ -75,8 +124,8 @@ export function SignUp() {
         )}
         <Input
           name="confirmPassword"
-          placeholder="Senha"
-          type="confirmPassword"
+          placeholder="Confirme sua senha"
+          type="password"
           onChange={formik.handleChange}
           value={formik.values.confirmPassword}
           onBlur={formik.handleBlur}
@@ -85,9 +134,9 @@ export function SignUp() {
           <Error>{formik.errors.confirmPassword}</Error>
         )}
         <Button type="submit" disabled={isDisabled}>
-          Fazer login
+          Iniciar jornada
         </Button>
-        <SignIn to="/">Já possuo cadastro</SignIn>
+        <SignIn to="/">Já tem uma conta? Entre agora!</SignIn>
       </Form>
     </Container>
   );

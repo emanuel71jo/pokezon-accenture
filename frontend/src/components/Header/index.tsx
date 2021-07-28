@@ -1,20 +1,20 @@
-import { HeaderComponent, Container } from './styles'
-import Logo from '../../assets/logo.png'
-import { useAuth } from '../../hooks/useAuth'
+import { HeaderComponent, Container } from "./styles";
+import Logo from "../../assets/logo.png";
+import { useAuth } from "../../hooks/useAuth";
 import {
   FiShoppingCart,
   FiLogOut,
   FiUser,
   FiHome,
   FiLogIn,
-} from 'react-icons/fi'
-import { Link, useHistory } from 'react-router-dom'
-import { useShopping } from '../../hooks/useShopping'
+} from "react-icons/fi";
+import { Link, useHistory } from "react-router-dom";
+import { useShopping } from "../../hooks/useShopping";
 
 export function Header() {
-  const { auth, signOut } = useAuth()
-  const { getTotalItems } = useShopping()
-  const history = useHistory()
+  const { auth, signOut } = useAuth();
+  const { getTotalItems } = useShopping();
+  const history = useHistory();
 
   return (
     <HeaderComponent>
@@ -26,36 +26,38 @@ export function Header() {
           <h2>Meu Carrinho</h2>
           <p>{getTotalItems()} itens</p>
         </div>
-        {auth !== '' && (
-          <button onClick={() => history.push('/profile')}>
+        {auth !== "" && (
+          <button onClick={() => history.push("/profile")} data-title="Perfil">
             <FiUser color="white" size="1.3rem" />
           </button>
         )}
-        <button onClick={() => history.push('/home')}>
+        <button onClick={() => history.push("/home")} data-title="Home">
           <FiHome color="white" size="1.3rem" />
         </button>
-        <button onClick={() => history.push('/pokecart')}>
+        <button onClick={() => history.push("/pokecart")} data-title="Carrinho">
           <FiShoppingCart color="white" size="1.3rem" />
         </button>
-        {auth === '' ? (
+        {auth === "" ? (
           <button
             onClick={() => {
-              history.push('/')
+              history.push("/");
             }}
+            data-title="Login"
           >
             <FiLogIn color="white" size="1.3rem" />
           </button>
         ) : (
           <button
             onClick={() => {
-              signOut()
-              history.push('/')
+              signOut();
+              history.push("/");
             }}
+            data-title="Sair"
           >
             <FiLogOut color="white" size="1.3rem" />
           </button>
         )}
       </Container>
     </HeaderComponent>
-  )
+  );
 }

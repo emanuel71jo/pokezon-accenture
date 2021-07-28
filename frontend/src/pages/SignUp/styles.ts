@@ -38,6 +38,7 @@ export const Input = styled.input`
   padding: 0.5rem 0;
   font-size: ${mixins.typography.paragraph};
   font-family: ${mixins.fonts.normal};
+  margin: 0 0 0.2rem 0;
 
   &:focus {
     outline: none;
@@ -85,4 +86,48 @@ export const Error = styled.p`
   font-weight: 200;
   align-self: flex-end;
   color: ${mixins.colors.red};
+`;
+
+export const InfoInputText = styled.p`
+  font-size: 0.6rem;
+  font-weight: 200;
+  align-self: center;
+  color: ${mixins.colors.darkblue};
+`;
+
+export const ProfileImage = styled.img`
+  width: 4rem;
+  border-radius: 2.5rem;
+  background-color: ${mixins.colors.white};
+`;
+
+export const WrapperImg = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  margin: 0.5rem 0;
+`;
+
+export const WrapperFields = styled.div`
+  width: 100%;
+  display: flex;
+
+  div:first-child {
+    margin-right: 0.2rem;
+  }
+`;
+
+export const ContainerInput = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
