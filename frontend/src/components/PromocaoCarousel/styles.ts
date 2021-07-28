@@ -8,7 +8,7 @@ export const BannerPreco = styled.div`
   font-size: 0.6rem;
   text-align: center;
   color: white;
-  width: 85%;
+  width: 74%;
   background-color: ${mixins.colorspokemons.water};
 `;
 
@@ -18,7 +18,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 80%;
+  width: 74%;
   background-color: #fff;
   img {
     height: 5.5rem;
@@ -27,12 +27,11 @@ export const Item = styled.div`
   transition: 0.3s;
 
   &:hover {
-    box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 100%);
-    height: 22rem;
-    width: 85%;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.6);
+    width: 78%;
   }
 
-  box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 30%);
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;

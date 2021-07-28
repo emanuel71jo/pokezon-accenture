@@ -28,7 +28,7 @@ export function Login() {
   return (
     <Container>
       <Form onSubmit={formik.handleSubmit}>
-        <Title>Entrar</Title>
+        <Title>Faça o login</Title>
         <Input
           name="email"
           placeholder="E-mail"
@@ -51,9 +51,9 @@ export function Login() {
           <Error>{formik.errors.password}</Error>
         )}
         <Button type="submit" disabled={isDisabled}>
-          Fazer login
+          Iniciar jornada
         </Button>
-        <SignUp to="/sign-up">Cadastra-se</SignUp>
+        <SignUp to="/sign-up">Não tem uma conta? Cadastre-se agora!</SignUp>
       </Form>
     </Container>
   )
