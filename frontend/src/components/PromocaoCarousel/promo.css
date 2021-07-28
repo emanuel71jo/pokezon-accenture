@@ -11,6 +11,10 @@
   width: 10rem;
 }
 
+.rec .rec-carousel-wrapper {
+ height: 25rem;
+}
+
 .subtitulo {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -18,14 +22,12 @@
 
 .titulo {
   display: inline-block;
-  border-bottom: 0.2rem solid black;
-  text-transform: uppercase;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: black;
-  margin-top: 3rem;
+  font-size: 1.3rem;
+  color: #656565;
+
+  margin-top: 4rem;
   margin-bottom: 1rem;
   margin-left: 5.5rem;
-  font-size: 1.8rem;
 }
 
 .linkdetalhe {

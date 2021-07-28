@@ -45,7 +45,7 @@ export const Item = styled.div`
     color: white;
     font-size: ${mixins.typography.paragraph};
     font-family: ${mixins.fonts.normal};
-    background-color: #007ea9;
+    background: linear-gradient(288deg, rgba(74,171,224,1) 10%, rgba(74,171,224,1) 54%, rgba(0,126,169,1) 98%);
 
     width: 70%;
     height: 2rem;

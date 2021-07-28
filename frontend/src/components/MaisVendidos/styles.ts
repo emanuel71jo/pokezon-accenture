@@ -8,14 +8,11 @@ export const Subtitulo = styled.p`
 `;
 
 export const Titulo = styled.h2`
-  border-bottom: 0.2rem solid black;
   display: inline-block;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: black;
+  font-size: 1.3rem;
+  color: #656565;
 
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
   margin-left: 5.5rem;
 `;
@@ -27,7 +24,7 @@ export const Item = styled.div`
   align-items: center;
   height: 21rem;
   width: 80%;
-
+ 
   color: black;
   box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 30%);
   padding-top: 1rem;
@@ -45,9 +42,9 @@ export const Item = styled.div`
   transition: 0.3s;
 
   &:hover {
-    box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 100%);
+    box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 80%);
     height: 22rem;
-    width: 85%;
+    width: 83%;
   }
 
   button {
@@ -55,7 +52,7 @@ export const Item = styled.div`
     color: white;
     font-size: ${mixins.typography.paragraph};
     font-family: ${mixins.fonts.normal};
-    background-color: #fb6635;
+    background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
 
     width: 70%;
     height: 2rem;

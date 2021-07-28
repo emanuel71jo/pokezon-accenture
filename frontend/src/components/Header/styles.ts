@@ -7,7 +7,7 @@ export const HeaderComponent = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5rem 2rem;
+  padding: 0.9rem 2rem;
 
   img {
     width: 8rem;

@@ -8,29 +8,30 @@ export const Subtitulo = styled.p`
 `;
 
 export const Titulo = styled.h2`
-  border-bottom: 0.2rem solid black;
   display: inline-block;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #1a1a1a;
+  font-size: 1.3rem;
+  color: #656565;
 
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
   margin-left: 5.5rem;
 `;
 
 export const Item = styled.div`
-  color: white;
+
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 21rem;
   width: 80%;
-  background-image: linear-gradient(to bottom, white, black);
+  background-color: white;
+  h3 {
+    color: rgb(255,192,0);
+  }
 
-  box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 30%);
+  box-shadow: 5px 5px 10px 1px rgb(244 196 48 / 90%);
   padding: 1rem 0;
   margin: 1rem 0;
   border-radius: 1rem;
@@ -42,7 +43,7 @@ export const Item = styled.div`
   transition: 0.3s;
 
   &:hover {
-    box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 100%);
+    box-shadow: 5px 5px 10px 1px rgb(244 196 48/ 100%);
     height: 22rem;
     width: 85%;
   }
@@ -52,7 +53,7 @@ export const Item = styled.div`
     color: black;
     font-size: ${mixins.typography.paragraph};
     font-family: ${mixins.fonts.normal};
-    background-color: white;
+    background: linear-gradient(288deg, rgba(255,214,0,1) 10%, rgba(255,248,0,1) 64%, rgba(255,192,0,1) 98%);
 
     width: 70%;
     height: 2rem;
