@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fi'
 import { Link, useHistory } from 'react-router-dom'
 import { useShopping } from '../../hooks/useShopping'
+import MenuBurguer from '../MenuBurguer'
 
 export function Header() {
   const { auth, signOut } = useAuth()
@@ -17,6 +18,8 @@ export function Header() {
   const history = useHistory()
 
   return (
+    <>
+    <MenuBurguer/>
     <HeaderComponent>
       <Link to="/home">
         <img src={Logo} alt="Pokezon" />
@@ -57,5 +60,6 @@ export function Header() {
         )}
       </Container>
     </HeaderComponent>
+    </>
   )
 }

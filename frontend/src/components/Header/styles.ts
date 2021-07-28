@@ -47,4 +47,8 @@ export const Container = styled.div`
     text-decoration: none;
     background: transparent;
   }
+
+  @media screen and (max-width: 700px){
+    display: none;
+  }
 `
