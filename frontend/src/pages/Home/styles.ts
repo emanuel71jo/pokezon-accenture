@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { mixins } from '../../styles/mixins'
 
 
+
 const handleBackgroundType = (color: string) => {
   switch (color) {
     case "Fire": return `${mixins.colorspokemons.fire}`;
@@ -102,7 +103,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 18rem;
-width: 17%;
+width: 13.5rem;
 background-color: white;
 h3 {
   color: black;
@@ -121,15 +122,10 @@ transition: 0.3s;
 
 &:hover {
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.8);
-
 }
-
-
 `
 
 export const Button = styled.button`
-
-
 color: white;
 font-size: ${mixins.typography.paragraph};
 font-family: ${mixins.fonts.normal};
@@ -155,4 +151,23 @@ export const ButtonDetalhes = styled.button`
   background-color: transparent;
   border: none;
   font-size: 0.8rem;
+`
+
+export const Top = styled.div`
+  button {
+    font-size: 1.5rem;
+    padding: 0.7rem 1.4rem 0.7rem;   
+    border-radius: 50%;
+    background: #FD4602;
+    border: 0px;
+    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, .3);
+    cursor: pointer;
+  }
+  transition: margin-top 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; top: -3.2rem; left: 79rem;
+  width: 3.3rem;
+  height: 3.3rem;
 `

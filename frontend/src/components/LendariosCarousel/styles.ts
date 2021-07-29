@@ -25,7 +25,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 74%;
+  width: 85%;
   background-color: white;
   h3 {
     color: rgb(255,192,0);
@@ -44,7 +44,7 @@ export const Item = styled.div`
 
   &:hover {
     box-shadow: 5px 5px 10px 1px rgb(244 196 48/ 100%);
-    width: 78%;
+    width: 90%;
   }
 
   `;
