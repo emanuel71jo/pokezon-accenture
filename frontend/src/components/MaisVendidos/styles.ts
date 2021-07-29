@@ -22,7 +22,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 74%;
+  width: 85%;
  
   color: black;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
@@ -42,7 +42,7 @@ export const Item = styled.div`
 
   &:hover {
     box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.6);
-    width: 78%;
+    width: 90%;
   }
 
 

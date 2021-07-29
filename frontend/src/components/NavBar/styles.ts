@@ -7,6 +7,10 @@ export const Nav = styled.div`
   display: flex;
   background-color: ${mixins.colors.gray};
   display: block;
+
+  @media screen and (max-width: 700px){
+    display: none;
+  }
 `
 
 export const Ul = styled.ul`

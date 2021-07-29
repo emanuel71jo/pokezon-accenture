@@ -3,13 +3,15 @@ import { darken, lighten } from 'polished'
 
 export const Container = styled.div`
   padding: 30px;
-  background: #fff;
-  border-radius: 4px;
+  display: flex;
+  background: #e5e5e5;
+  
   footer {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     button {
       background: #7159c1;
       color: #fff;
@@ -25,20 +27,36 @@ export const Container = styled.div`
     }
   }
 `
+export const CartTable = styled.table`
+  width: 1500px; // INDETIDATO, ESTAMOS EM OBRAS! ;) 
+  flex-direction: row;
+  left: 183px;
+  top: 175px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+  `
 
 export const ProductTable = styled.table`
-  width: 100%;
+  width: 100%; // INDETIDATO, ESTAMOS EM OBRAS! ;) 
+ 
   thead th {
     color: #999;
     text-align: left;
     padding: 12px;
+    font-size: 20px;
   }
   tbody td {
-    padding: 12px;
+    padding: 30px;
     border-bottom: 1px solid #eee;
+    font-size: 18px;
   }
   img {
     height: 100px;
+    //justify-content: left start;
+    //align-items:first baseline ;
   }
   strong {
     color: #333;

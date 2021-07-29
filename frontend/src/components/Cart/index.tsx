@@ -5,7 +5,7 @@ import {
 } from 'react-icons/md'
 import { useShopping } from '../../hooks/useShopping'
 
-import { Container, ProductTable, Total } from './styles'
+import { CartTable, Container, ProductTable, Total } from './styles'
 
 export function Cart() {
   const {
@@ -17,12 +17,13 @@ export function Cart() {
 
   return (
     <Container>
+      <CartTable>
       <ProductTable>
         <thead>
           <tr>
             <th aria-label="product image" />
             <th>PRODUTO</th>
-            <th>QTD</th>
+            <th>QUANTIDADE</th>
             <th>SUBTOTAL</th>
             <th aria-label="delete icon" />
           </tr>
@@ -82,9 +83,10 @@ export function Cart() {
         <button type="button">Finalizar pedido</button>
         <Total>
           <span>TOTAL</span>
-          <strong>R$ 100000,00</strong>
+          <strong>R$ 1000,00</strong>
         </Total>
       </footer>
+      </CartTable>
     </Container>
   )
 }

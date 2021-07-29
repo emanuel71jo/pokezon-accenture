@@ -1,0 +1,83 @@
+/* Position and sizing of burger button */
+.bm-burger-button {
+    /* position: fixed; */
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    right: 36px;
+    top: 26px;
+  }
+
+  #container_burguer{
+    display: flex;
+    width: 12rem;
+    height: 12rem;
+}
+  
+  .bm-burger-bars {
+    background: #656565;
+  }
+  
+  
+  .bm-burger-bars-hover {
+    opacity: 0.8;
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  .bm-menu {
+    background: #FAFAFA;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  
+
+  .bm-item-list {
+    color: #1A1A1A;
+    padding: 0.8em;
+  }
+  
+
+  .bm-item {
+    display: inline-block;
+  }
+  
+  .bm-item button{
+    display: flex;
+    background-color: transparent;
+    border: none;
+    padding: 1rem 0 0;
+    font-size: 1rem;
+  }
+
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .page{
+      margin-right: 1rem;
+  }
+
+  .links ul{
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+  }
+
+  .links ul a{
+      color: #1A1A1A;
+      padding-bottom: 0.8rem;
+      font-size: 1rem;
+  }
+
+  @media (min-width: 700px){
+    .bm-burger-button {
+        display: none;
+    }
+  }

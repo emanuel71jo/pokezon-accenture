@@ -5,10 +5,10 @@ import "./resetCarousel.css";
 import { useShopping } from "../../hooks/useShopping";
 
 const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
+  { width: 1, itemsToShow: 2 },
+  { width: 550, itemsToShow: 3, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 4 },
+  { width: 1200, itemsToShow: 5 },
 ];
 
 const PromocaoCarousel = () => {
@@ -17,7 +17,7 @@ const PromocaoCarousel = () => {
   return (
     <div id="promocao">
       <h2 className="titulo">Promoções Especiais</h2>
-      <Carousel isRTL={false} breakPoints={breakPoints}>
+      <Carousel itemPadding={[0, 0]} isRTL={false} breakPoints={breakPoints}>
         {PokesPromotion.map((Pokemon) => (
           <Item key={Pokemon.id}>
             <img src={Pokemon.image} alt="Pokemon Promoção" />

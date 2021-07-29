@@ -1,8 +1,9 @@
 import CarouselBanner from '../../components/CarouselBanner'
 import PromocaoCarousel from '../../components/PromocaoCarousel'
 import LendariosCarousel from '../../components/LendariosCarousel'
-import { Card, Subtitulo, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
+import { Top, Card, Subtitulo, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
 import MaisVendidos from '../../components/MaisVendidos'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export function Home() {
   const typesButtons = ["Fire", "Dragon", "Bug", "Eletric", "Fairy", "Ice", "Poison", "Rock", "Grass", "Normal", "Ghost", "Water", "Steel", "Fighthing", "Flying", "Ground", "Psychic"]
@@ -45,6 +46,17 @@ export function Home() {
 
       </ContainerCard>
 
+            <Top>
+          <button> 
+          <AnchorLink href="#logo">
+            ↑
+          </AnchorLink>
+          </button>  
+            </Top>
+          
+
     </Container>
   )
+
+
 }

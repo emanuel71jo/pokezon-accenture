@@ -89,4 +89,8 @@ export const Container = styled.div`
       margin-top: 0.3rem;
     }
   }
-`;
+
+  @media screen and (max-width: 700px){
+    display: none;
+  }
+`
