@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { darken, lighten } from 'polished'
+import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
   padding: 30px;
@@ -13,16 +14,30 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      background: #7159c1;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+      margin-left: 1.8rem;
+
       color: #fff;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
+      background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
+      font-size: ${mixins.typography.paragraph};
+      font-family: ${mixins.fonts.normal};
       font-weight: bold;
       text-transform: uppercase;
-      transition: background 0.2s;
+      
+      border-radius: 5px;
+      padding:25px 25px;
+
+      border: none;
+      border-radius: 8px;
+      transition: 0.2s;
+
       &:hover {
-        background: ${darken(0.06, '#7159c1')};
+        background: ${darken(0.06, '#fd4602')};
       }
     }
   }
@@ -46,15 +61,16 @@ export const ProductTable = styled.table`
     color: #999;
     text-align: left;
     padding: 12px;
-    font-size: 20px;
+    font-size: 22px;
   }
   tbody td {
     padding: 30px;
     border-bottom: 1px solid #eee;
-    font-size: 18px;
+    font-size: 20px;
   }
   img {
     height: 100px;
+    //background-color: #333;
     //justify-content: left start;
     //align-items:first baseline ;
   }
@@ -65,7 +81,7 @@ export const ProductTable = styled.table`
   span {
     display: block;
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
   }
   div {
@@ -84,17 +100,17 @@ export const ProductTable = styled.table`
     border: 0;
     padding: 6px;
     svg {
-      color: #7159c1;
+      color: #f16536;
       transition: color 0.2s;
     }
     &:hover {
       svg {
-        color: ${darken(0.06, '#7159c1')};
+        color: ${darken(0.06, '#fd4602')};
       }
     }
     &:disabled {
       svg {
-        color: ${lighten(0.25, '#7159c1')};
+        color: ${lighten(0.25, '#f16536')};
         cursor: not-allowed;
       }
     }
