@@ -11,8 +11,20 @@ class UsersService {
   }
 
   async listAll(): Promise<User[]> {
-    const users = await this.usersRepository.find();
+    const users = await this.usersRepository.find({
+      select: ["id", "firstName", "lastName", "email", "created_at"],
+    });
+
     return users;
+  }
+
+  async getById(id: string): Promise<User> {
+    const user = await this.usersRepository.findOne({
+      where: { id },
+      select: ["id", "firstName", "lastName", "email", "created_at"],
+    });
+
+    return user;
   }
 
   async create(

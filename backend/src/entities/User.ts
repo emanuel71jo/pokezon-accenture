@@ -1,7 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import bcrypt from "bcryptjs";
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+} from "typeorm";
 import { v4 as uuid } from "uuid";
+import { Order } from "./Order";
 
 @Entity("users")
 class User {
@@ -22,6 +28,9 @@ class User {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToMany(() => Order, (order) => order.user)
+  orders: Order[];
 
   constructor() {
     if (!this.id) this.id = uuid();
