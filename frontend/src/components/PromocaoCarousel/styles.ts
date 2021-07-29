@@ -13,12 +13,13 @@ export const BannerPreco = styled.div`
 `;
 
 export const Item = styled.div`
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 21rem;
-  width: 74%;
+  width: 85%;
   background-color: #fff;
   img {
     height: 5.5rem;
@@ -28,7 +29,7 @@ export const Item = styled.div`
 
   &:hover {
     box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.6);
-    width: 78%;
+    width: 90%;
   }
 
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);

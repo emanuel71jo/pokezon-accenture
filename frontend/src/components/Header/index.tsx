@@ -22,7 +22,7 @@ export function Header() {
     <MenuBurguer/>
     <HeaderComponent>
       <Link to="/home">
-        <img src={Logo} alt="Pokezon" />
+        <img  id="logo" src={Logo} alt="Pokezon" />
       </Link>
       <Container>
         <div>
