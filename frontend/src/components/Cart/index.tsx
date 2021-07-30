@@ -64,7 +64,7 @@ export function Cart() {
                 </div>
               </td>
               <td>
-                <strong>R$ 10000</strong>
+              <h2>R$ 10000</h2>
               </td>
               <td>
                 <button
