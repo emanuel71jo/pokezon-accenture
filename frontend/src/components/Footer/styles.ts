@@ -6,6 +6,7 @@ export const FooterComponent = styled.footer`
   width: 100%;
   bottom: 0;
   z-index: 1000;
+  position: relative;
   background-color: ${mixins.colors.darkgray};
   height: 2rem;
   display: flex;
