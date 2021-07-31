@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { mixins } from '../../styles/mixins'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-`
+`;
 
 export const Form = styled.form`
   width: 22rem;
@@ -22,13 +22,13 @@ export const Form = styled.form`
   justify-content: space-evenly;
   flex-direction: column;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
-`
+`;
 
 export const Title = styled.h1`
   color: ${mixins.colors.buttoncolor};
   font-size: ${mixins.typography.title};
   font-family: ${mixins.fonts.semi_bold};
-`
+`;
 
 export const Input = styled.input`
   border: none;
@@ -42,7 +42,7 @@ export const Input = styled.input`
     outline: none;
     border-bottom: 1px solid ${mixins.colors.primary};
   }
-`
+`;
 
 export const Button = styled.button`
   color: ${mixins.colors.secondary};
@@ -64,7 +64,7 @@ export const Button = styled.button`
     background-color: ${mixins.colors.gray};
     cursor: not-allowed;
   }
-`
+`;
 
 export const SignUp = styled(Link)`
   text-decoration: none;
@@ -77,11 +77,11 @@ export const SignUp = styled(Link)`
     color: ${mixins.colors.blue};
     opacity: 0.8;
   }
-`
+`;
 
 export const Error = styled.p`
   font-size: 0.7rem;
   font-weight: 200;
   align-self: flex-end;
   color: ${mixins.colors.red};
-`
+`;

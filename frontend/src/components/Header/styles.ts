@@ -7,7 +7,9 @@ export const HeaderComponent = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.9rem 2rem;
+  height: 25vh;
+  padding: 0rem 2rem;
+  position: relative;
 
   img {
     width: 8rem;
@@ -90,7 +92,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 700px) {
     display: none;
   }
-`
+`;
