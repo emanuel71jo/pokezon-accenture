@@ -21,8 +21,7 @@ export const Container = styled.div`
       align-items: center; // deixa o testo do botão finalizar centralizado
       margin-top: 0,5rem;
       margin-bottom: 0,5rem;
-      //margin-left: 1.8rem;
-
+      
       color: #fff;
       background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
       font-size: ${mixins.typography.paragraph};
@@ -62,23 +61,19 @@ export const ProductTable = styled.table`
   thead th {
     color: #656565;
     text-align: left;
-    //padding: 12px; (aproximação dos elementos)
     font-size: 20px;
     justify-content: left ; // alinhar a cabeça da tabela a esquerda 
     //background-color: lightblue; // deixar o fundo da cabeça azul
   }
   tbody td {
-    //padding: 30px;
     border-bottom: 1px solid #eee;
-    //font-size: 20px; 
     justify-content: left ; 
     //background-color: lightblue; // deixar o fundo da tabela azul
   }
   img {
     height: 100px;
     //background-color: red; // deixar o fundo da imagem vermelho
-    //justify-content: left start;
-    //align-items:first baseline ;
+    
   }
   strong {
     color: #656565;
