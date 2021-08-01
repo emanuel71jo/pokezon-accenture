@@ -163,24 +163,41 @@ export const Modal = styled.div`
   align-items: center;
 `;
 
-/**
- * Caixa de finalização de pedido
- */
+
+ // Caixa de finalização de pedido
 export const Wrapper = styled.div`
-  width: 22rem;
-  height: 20rem;
+  width: 30rem;
+  height: 22rem;
   background-color: ${mixins.colors.secondary};
   border-radius: 5px;
   padding: 1.5rem 2.5rem;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  //align-items: center; //flex-start
+  //justify-content: space-evenly; //fez a imagem ir para cima
   flex-direction: column;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+
+  // imagem da Caixa de finalização de pedido
+  img{ 
+    height: 100px;
+    width: 100px;
+    //align-items: center;
+    //justify-content: center;
+    //align-content: center;
+    align-self: center;
+  }
+  h1{
+    align-self: center;
+  }
+  h2{
+    align-self: center;
+  }
 `;
 
-export const ButtonExitModal = styled.button`
+// Saida  da Caixa de finalização de pedido
+export const ButtonExitModal = styled.button` 
   text-decoration: none;
   border: none;
   background-color: transparent;
+  align-self: flex-end; //baseline
 `;

@@ -40,7 +40,9 @@ export function Cart() {
             <ButtonExitModal onClick={handleToogleShowModal}>
               <FiX color="black" size="1.3rem" />
             </ButtonExitModal>
-            <h1>Compra finaliza</h1>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1AYWDCSu8E69WHZKThclSjstlfPFR1086Tg&usqp=CAU'/> 
+            <h1>Compra finalizada</h1>
+            <h2>Em breve você receberá um e-mail com todos os detalhes!!!</h2>
           </Wrapper>
         </Modal>
       )}
