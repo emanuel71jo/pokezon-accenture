@@ -3,49 +3,58 @@ import styled from 'styled-components'
 import { mixins } from '../../styles/mixins'
 
 
+export const ContainerProfile = styled.div `
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 60%;
+    /* margin-left: 10rem;
+    margin-right: 10rem; */
+      h2 {
+        margin-bottom: 1rem;
+        color: ${mixins.colors.gray};
+
+      }
+`
+
 export const Container = styled.div`
     height: 77vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-`
+    flex-direction: column;
+   
+    `
 
 export const ContainerDados = styled.div `
-    color: ${mixins.colors.gray};
-   label {
-        margin-top: 1rem;
-        margin-right: 0.4rem;
-    }
-    Input {
-        padding: 0.2rem 0.5rem;
-        background: none;
-        border: none;
-        border-bottom: 1px solid ${mixins.colors.gray};
-        margin-top: 1rem;
-       margin-right: 1rem;
-    }
+  Input, select {
+    margin-bottom: 1.2rem;
+    padding-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 0.08rem solid #D8D8D8;
 
-    button {
-        margin-left: 28rem;
-        margin-top: 4rem;
-    }
+  }
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  color: ${mixins.colors.gray};
+  width: 100%;
 `
 
 export const Dados = styled.div `
-
-    font-family: ${mixins.fonts.normal};
-    margin-left: 2rem;
-    padding: 2rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 40rem;
-    border: 0.04rem solid gray;
+    font-family: ${mixins.fonts.normal};
+    padding: 2rem;
+    width: 24rem;
+    border-radius: 0.4rem;
+    border: 0.14rem solid #D8D8D8;
 
 `
 
 export const Button = styled.button`
-margin-top: 1.2rem;
 padding: 0.5rem 1rem;
 color: white;
 font-size: ${mixins.typography.paragraph};

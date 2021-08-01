@@ -3,11 +3,13 @@ import { mixins } from '../../styles/mixins'
 
 export const ContainerImg = styled.div `
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
         span {
             color: ${mixins.colors.gray};
-            margin-left: 0.8rem;
+            margin-top: 0.4rem;
+            margin-bottom: 1.5rem;
             font-size: 1rem;
         }
 `
@@ -18,7 +20,7 @@ export const Imagem = styled.img `
 `
 
 export const Sidebar = styled.div `
-   margin-right: 4rem;
+    margin-right: 4rem;
     width: 15rem;
     ul li a {
         color: ${mixins.colors.gray};

@@ -1,16 +1,19 @@
 import SidebarProfile from '../../components/SidebarProfile'
-import { Container, Dados, ContainerDados, Button } from './styles'
+import { ContainerProfile, Container, Dados, ContainerDados, Button } from './styles'
 
 export function Profile() {
   
   return ( 
-  
+    <ContainerProfile>
+
+    <SidebarProfile />
+    
   <Container>
-  <SidebarProfile />
 
  
+    <h2>Dados pessoais</h2>
     <Dados>
-         
+        
         <ContainerDados>
           
           <label>Nome completo</label>
@@ -18,7 +21,7 @@ export function Profile() {
           
           <label>E-mail</label>
           <input type="text" />
-              <br />
+          
           <label>Telefone</label>
           <input type="text" />
 
@@ -31,15 +34,16 @@ export function Profile() {
             <option value="homem transgênero"> Homem transgênero </option>
             <option value="Não-binário"> Não-binário </option>
           </select>
-              <br />
+            
           <label>Origem</label>
           <input type="text" />
-              <br />
-            <Button>Salvar</Button>
+             
+            <Button>SALVAR ALTERAÇÕES</Button>
 
         </ContainerDados>
 
     </Dados>
   </Container>
+  </ContainerProfile>
   )
 }
