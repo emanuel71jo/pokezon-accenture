@@ -1,10 +1,10 @@
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import banner from '../../assets/banners/img.jpeg'
-import segundoBanner from '../../assets/banners/img1.jpg'
-import terceiroBanner from '../../assets/banners/img2.jpeg'
-import quartoBanner from '../../assets/banners/img4.png'
-import NavBar from '../NavBar'
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import banner from "../../assets/banners/img.jpeg";
+import segundoBanner from "../../assets/banners/img1.jpg";
+import terceiroBanner from "../../assets/banners/img2.jpeg";
+import quartoBanner from "../../assets/banners/img4.png";
+import NavBar from "../NavBar";
 
 function CarouselBanner() {
   return (
@@ -32,7 +32,7 @@ function CarouselBanner() {
         </div>
       </Carousel>
     </>
-  )
+  );
 }
 
-export default CarouselBanner
+export default CarouselBanner;

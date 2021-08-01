@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { darken, lighten } from 'polished'
+import styled from "styled-components";
+import { darken, lighten } from "polished";
 import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   background: #e5e5e5;
   padding: 50px 80px 50px 80px;
-  
+
   footer {
     margin-top: 30px;
     display: flex;
@@ -19,30 +19,35 @@ export const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center; // deixa o testo do botão finalizar centralizado
-      margin-top: 0,5rem;
-      margin-bottom: 0,5rem;
+      margin-top: 0, 5rem;
+      margin-bottom: 0, 5rem;
       //margin-left: 1.8rem;
 
       color: #fff;
-      background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
+      background: linear-gradient(
+        288deg,
+        rgba(241, 101, 54, 1) 10%,
+        rgba(251, 102, 53, 1) 54%,
+        rgba(241, 101, 54, 1) 98%
+      );
       font-size: ${mixins.typography.paragraph};
       font-family: ${mixins.fonts.normal};
       font-weight: bold;
       text-transform: uppercase;
-      
+
       border-radius: 5px;
-      padding:25px 25px;
+      padding: 25px 25px;
 
       border: none;
       border-radius: 8px;
       transition: 0.2s;
 
       &:hover {
-        background: ${darken(0.06, '#fd4602')};
+        background: ${darken(0.06, "#fd4602")};
       }
     }
   }
-`
+`;
 export const CartTable = styled.table`
   width: 100%; // tamanho do elemento (antes 1500px)
   flex-direction: row;
@@ -53,32 +58,29 @@ export const CartTable = styled.table`
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); // sombra da tabela
-  padding: 50px 50px 50px 50px; // distancia da borta 
-  `
+  padding: 50px 50px 50px 50px; // distancia da borta
+`;
 
 export const ProductTable = styled.table`
-  width: 100%; // INDETIDATO, ESTAMOS EM OBRAS! ;) 
- 
+  width: 100%; // INDETIDATO, ESTAMOS EM OBRAS! ;)
+
   thead th {
     color: #656565;
     text-align: left;
-    //padding: 12px; (aproximação dos elementos)
     font-size: 20px;
-    justify-content: left ; // alinhar a cabeça da tabela a esquerda 
+    justify-content: left; // alinhar a cabeça da tabela a esquerda
     //background-color: lightblue; // deixar o fundo da cabeça azul
   }
   tbody td {
-    //padding: 30px;
     border-bottom: 1px solid #eee;
-    //font-size: 20px; 
-    justify-content: left ; 
+    //font-size: 20px;
+    justify-content: left;
     //background-color: lightblue; // deixar o fundo da tabela azul
   }
   img {
     height: 100px;
     //background-color: red; // deixar o fundo da imagem vermelho
-    //justify-content: left start;
-    //align-items:first baseline ;
+    
   }
   strong {
     color: #656565;
@@ -113,12 +115,12 @@ export const ProductTable = styled.table`
     }
     &:hover {
       svg {
-        color: ${darken(0.06, '#fd4602')};
+        color: ${darken(0.06, "#fd4602")};
       }
     }
     &:disabled {
       svg {
-        color: ${lighten(0.25, '#f16536')};
+        color: ${lighten(0.25, "#f16536")};
         cursor: not-allowed;
       }
     }
@@ -126,9 +128,9 @@ export const ProductTable = styled.table`
   h2 {
     color: #1a1a1a;
     display: block;
-    font-size: 18px; 
+    font-size: 18px;
   }
-`
+`;
 
 export const Total = styled.div`
   display: flex;
@@ -141,4 +143,61 @@ export const Total = styled.div`
     font-size: 28px;
     margin-left: 5px;
   }
-`
+`;
+
+export const Modal = styled.div`
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  //overflow: hidden;
+  position: absolute;
+  z-index: 1001;
+
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+
+ // Caixa de finalização de pedido
+export const Wrapper = styled.div`
+  width: 30rem;
+  height: 22rem;
+  background-color: ${mixins.colors.secondary};
+  border-radius: 5px;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  //align-items: center; //flex-start
+  //justify-content: space-evenly; //fez a imagem ir para cima
+  flex-direction: column;
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+
+  // imagem da Caixa de finalização de pedido
+  img{ 
+    height: 100px;
+    width: 100px;
+    //align-items: center;
+    //justify-content: center;
+    //align-content: center;
+    align-self: center;
+  }
+  h1{
+    align-self: center;
+  }
+  h2{
+    align-self: center;
+  }
+`;
+
+// Saida  da Caixa de finalização de pedido
+export const ButtonExitModal = styled.button` 
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  align-self: flex-end; //baseline
+`;
