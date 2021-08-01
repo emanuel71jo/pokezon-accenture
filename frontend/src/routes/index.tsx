@@ -17,6 +17,7 @@ import { useAuth } from "../hooks/useAuth";
 
 // Styles
 import { Styled } from "./styles";
+import Pedidos from "../components/Pedidos";
 
 function Routes() {
   const { auth } = useAuth();
@@ -30,6 +31,7 @@ function Routes() {
           <Route exact path={"/home"} component={Home} />
           <Route exact path="/pokecart" component={PokeCart} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/Pedidos" component={Pedidos} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect exact from="/" to="/home" />

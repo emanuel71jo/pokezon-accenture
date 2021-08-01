@@ -4,15 +4,17 @@ import LendariosCarousel from '../../components/LendariosCarousel'
 import { Top, Card, Subtitulo, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
 import MaisVendidos from '../../components/MaisVendidos'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import Promo from '../../components/BannerSolo'
 
 export function Home() {
   const typesButtons = ["Fire", "Dragon", "Bug", "Eletric", "Fairy", "Ice", "Poison", "Rock", "Grass", "Normal", "Ghost", "Water", "Steel", "Fighthing", "Flying", "Ground", "Psychic"]
   return (
-    <Container>
+      <Container>
       <CarouselBanner />
       <PromocaoCarousel />
       <MaisVendidos />
       <LendariosCarousel />
+      <Promo />
      
       <Search>
             <Input>

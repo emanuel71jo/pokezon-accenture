@@ -1,5 +1,5 @@
 import { slide as Menu } from 'react-burger-menu'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useAuth } from '../../hooks/useAuth'
 import {
     FiShoppingCart,
@@ -27,17 +27,17 @@ function MenuBurguer() {
                 </div>
                 {auth !== '' && (
                     <button onClick={() => history.push('/profile')}>
-                       <p className='page'> Perfil </p>
                         <FiUser color="#1A1A1A" margin-right="0.5rem" size="1.3rem" />
+                       <p className='page'> Perfil </p>
                     </button>
                 )}
                 <button onClick={() => history.push('/home')}>
-                <p className='page'> Home</p>
                     <FiHome color="#1A1A1A" margin-right="0.5rem" size="1.3rem" />
+                <p className='page'> Home</p>
                 </button>
                 <button onClick={() => history.push('/pokecart')}>
-                <p className='page'> Carrinho</p>
                     <FiShoppingCart color="#1A1A1A" margin-right="0.5rem" size="1.3rem" />
+                <p className='page'> Carrinho</p>
                 </button>
                 {auth === '' ? (
                     <button
@@ -45,8 +45,8 @@ function MenuBurguer() {
                             history.push('/')
                         }}
                     >
-                      <p className='page'>  Entrar</p>
                         <FiLogIn color="#1A1A1A" size="1.3rem" />
+                      <p className='page'>  Entrar</p>
                     </button>
                 ) : (
                     <button
@@ -55,11 +55,11 @@ function MenuBurguer() {
                             history.push('/')
                         }}
                     >
-                       <p className='page'> Sair</p>
                         <FiLogOut color="#1A1A1A" size="1.3rem" />
+                       <p className='page'> Sair</p>
                     </button>
                 )}
-                <section className="links">
+                {/* <section className="links">
                     <ul>
                         <AnchorLink href="/">
                         <p>Todos</p>
@@ -73,7 +73,7 @@ function MenuBurguer() {
 
                         <AnchorLink href="#lendarios">Lendários</AnchorLink>
                     </ul>
-                </section>
+                </section> */}
             </div>
         </Menu>
     )
