@@ -8,6 +8,9 @@ export const Container = styled.div`
   background: #e5e5e5;
   padding: 50px 80px 50px 80px;
 
+  width: 100%;
+  height: 100%;
+
   footer {
     margin-top: 30px;
     display: flex;
@@ -51,8 +54,6 @@ export const Container = styled.div`
 export const CartTable = styled.table`
   width: 100%; // tamanho do elemento (antes 1500px)
   flex-direction: row;
-  left: 183px;
-  top: 175px;
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -80,7 +81,6 @@ export const ProductTable = styled.table`
   img {
     height: 100px;
     //background-color: red; // deixar o fundo da imagem vermelho
-    
   }
   strong {
     color: #656565;
@@ -147,10 +147,9 @@ export const Total = styled.div`
 
 export const Modal = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 100%;
-  //overflow: hidden;
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   z-index: 1001;
 
   bottom: 0;
@@ -163,8 +162,7 @@ export const Modal = styled.div`
   align-items: center;
 `;
 
-
- // Caixa de finalização de pedido
+// Caixa de finalização de pedido
 export const Wrapper = styled.div`
   width: 30rem;
   height: 22rem;
@@ -178,7 +176,7 @@ export const Wrapper = styled.div`
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
 
   // imagem da Caixa de finalização de pedido
-  img{ 
+  img {
     height: 100px;
     width: 100px;
     //align-items: center;
@@ -186,16 +184,16 @@ export const Wrapper = styled.div`
     //align-content: center;
     align-self: center;
   }
-  h1{
+  h1 {
     align-self: center;
   }
-  h2{
+  h2 {
     align-self: center;
   }
 `;
 
 // Saida  da Caixa de finalização de pedido
-export const ButtonExitModal = styled.button` 
+export const ButtonExitModal = styled.button`
   text-decoration: none;
   border: none;
   background-color: transparent;
