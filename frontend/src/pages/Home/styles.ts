@@ -185,8 +185,9 @@ export const Top = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -3.2rem;
-  left: 79rem;
-  width: 3.3rem;
-  height: 3.3rem;
+  top: -2rem;
+    display: flex;
+    margin-right: 1rem;
+    justify-content: flex-end;
+    height: 3.3rem;
 `;

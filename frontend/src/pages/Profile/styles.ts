@@ -1,4 +1,3 @@
-import { Input } from './../SignUp/styles';
 import styled from 'styled-components'
 import { mixins } from '../../styles/mixins'
 
@@ -10,8 +9,6 @@ export const ContainerProfile = styled.div `
   margin-top: 5rem;
   margin-bottom: 5rem;
   width: 60%;
-    /* margin-left: 10rem;
-    margin-right: 10rem; */
       h2 {
         margin-bottom: 1rem;
         color: ${mixins.colors.gray};
@@ -20,9 +17,9 @@ export const ContainerProfile = styled.div `
 `
 
 export const Container = styled.div`
-    height: 77vh;
-    display: flex;
-    flex-direction: column;
+    // height: 77vh;
+    // display: flex;
+    // flex-direction: column;
    
     `
 

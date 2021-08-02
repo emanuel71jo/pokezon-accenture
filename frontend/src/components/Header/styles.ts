@@ -8,7 +8,7 @@ export const HeaderComponent = styled.header`
   align-items: center;
   width: 100%;
   height: 25vh;
-  padding: 0rem 2rem;
+  padding: 0.6rem 2rem;
   position: relative;
 
   img {

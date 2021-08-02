@@ -17,7 +17,7 @@
 
 .rec .rec-carousel {
   width: 85%;
-  margin-left: 1.8rem;
+  
 }
 
 .titulo {
@@ -38,4 +38,23 @@
 
 .linkdetalhe {
   font-size: 0.8rem;
+}
+
+@media (min-width: 500px){
+  .rec .rec-carousel {
+
+    margin-left: 1.8rem;
+  }
+}
+
+@media (max-width: 500px){
+  .rec .rec-arrow{
+    width: 3rem;
+    height: 3rem;
+    min-width: 1rem;
+    line-height: 0;
+  }
+  .rec .rec-carousel {
+    width: 95%;
+  }
 }
