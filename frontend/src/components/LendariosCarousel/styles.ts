@@ -15,10 +15,13 @@ export const Titulo = styled.h2`
   margin-top: 4rem;
   margin-bottom: 1rem;
   margin-left: 8rem;
-`;
+  
+  @media (max-width: 500px){
+    margin-left: 5rem;
+}
+`
 
 export const Item = styled.div`
-
   color: black;
   display: flex;
   flex-direction: column;

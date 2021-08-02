@@ -14,6 +14,15 @@ export const HeaderComponent = styled.header`
   img {
     width: 8rem;
   }
+
+  
+@media (max-width: 500px){
+  img {
+    margin-top: 1rem;
+    width: 4rem;
+  }
+}
+
 `;
 
 export const Container = styled.div`
@@ -96,3 +105,4 @@ export const Container = styled.div`
     display: none;
   }
 `;
+

@@ -6,10 +6,28 @@ import MaisVendidos from '../../components/MaisVendidos'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Promo from '../../components/BannerSolo'
 import { Modal } from '../../components/Modal/index'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 export function Home() {
+
+  // const [datasPokemon, setdatasPokemon] = useState ([])
+
+  // useEffect (() => {
+
+  //   async function getData() {
+  //       const response = await fetch (`https://pokeapi.co/api/v2/pokemon/1`) 
+  //       const datas = await response.json() 
+  //       setdatasPokemon(datas)
+  //   }
+
+  //   getData()
+
+  // }, []  )
+  // console.log(setdatasPokemon.[prototype])
+  // console.log(datasPokemon)
+
+
   const typesButtons = [
     "Fire",
     "Dragon",
@@ -73,12 +91,23 @@ export function Home() {
             
               </Modal>
         </Card>
+
+           
+              
+
+              
+
+         
+
       </ContainerCard>
       <Top>
-        <button>
+        <button >
           <AnchorLink href="#logo">↑</AnchorLink>
         </button>
       </Top>
     </Container>
+
+    
+
   );
 }

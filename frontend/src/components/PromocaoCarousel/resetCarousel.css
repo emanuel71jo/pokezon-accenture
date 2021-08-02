@@ -50,11 +50,14 @@
 @media (max-width: 500px){
   .rec .rec-arrow{
     width: 3rem;
-    height: 3rem;
+    height: 2.5rem;
     min-width: 1rem;
     line-height: 0;
   }
   .rec .rec-carousel {
     width: 95%;
+  }
+  .titulo {
+    margin-left: 5rem;
   }
 }

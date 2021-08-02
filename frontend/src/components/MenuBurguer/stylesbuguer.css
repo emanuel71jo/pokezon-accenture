@@ -2,11 +2,11 @@
 .bm-burger-button {
     /* position: fixed; */
     position: absolute;
-    width: 36px;
-    height: 30px;
-    right: 36px;
-    
-    top: 26px;
+    width: 28px;
+    height: 18px;
+    right: 20px;
+    top: 25px;
+
   }
 
   #container_burguer{
