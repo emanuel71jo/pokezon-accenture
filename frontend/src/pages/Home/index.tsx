@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import CarouselBanner from "../../components/CarouselBanner";
 import PromocaoCarousel from "../../components/PromocaoCarousel";
 import LendariosCarousel from "../../components/LendariosCarousel";
@@ -19,6 +20,15 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Modal } from '../../components/Modal/index'
 import React, { useState } from "react";
 
+=======
+import CarouselBanner from '../../components/CarouselBanner'
+import PromocaoCarousel from '../../components/PromocaoCarousel'
+import LendariosCarousel from '../../components/LendariosCarousel'
+import { Top, Card, Subtitulo, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input, ButtonDetalhes, Button } from './styles'
+import MaisVendidos from '../../components/MaisVendidos'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import Promo from '../../components/BannerSolo'
+>>>>>>> c71ff4fce0a65e19c8837d84ee6f209da29043a6
 
 export function Home() {
   const typesButtons = [
@@ -43,7 +53,7 @@ export function Home() {
   const [isModalOpen, setModalState] = React.useState(false);
   const toggleModal = () => setModalState(!isModalOpen);
   return (
-    <Container>
+      <Container>
       <CarouselBanner />
               <Modal
               title={'My modal'}
@@ -56,6 +66,8 @@ export function Home() {
       <PromocaoCarousel />
       <MaisVendidos />
       <LendariosCarousel />
+      <Promo />
+     
       <Search>
         <Input>
           <input type="text" placeholder="Pesquisar" />

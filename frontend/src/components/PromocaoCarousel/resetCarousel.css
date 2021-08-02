@@ -30,6 +30,12 @@
   margin-left: 8rem;
 }
 
+.subtitulo {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+}
+
 .linkdetalhe {
   font-size: 0.8rem;
 }

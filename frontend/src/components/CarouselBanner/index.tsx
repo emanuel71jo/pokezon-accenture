@@ -15,7 +15,7 @@ function CarouselBanner() {
         showThumbs={false}
         infiniteLoop
         showStatus={false}
-        transitionTime={100}
+        transitionTime={80}
         interval={5000}
       >
         <div key={1}>
