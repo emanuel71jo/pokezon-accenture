@@ -5,6 +5,9 @@ import { Top, Card, Subtitulo, Container, ContainerCard, Search, TypeButton, But
 import MaisVendidos from '../../components/MaisVendidos'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Promo from '../../components/BannerSolo'
+import { Modal } from '../../components/Modal/index'
+import React, { useState } from "react";
+
 
 export function Home() {
   const typesButtons = [
@@ -26,11 +29,12 @@ export function Home() {
     "Ground",
     "Psychic",
   ];
+  const [isModalOpen, setModalState] = React.useState(false);
+  const toggleModal = () => setModalState(!isModalOpen);
   return (
       <Container>
       <CarouselBanner />
       <PromocaoCarousel />
-
       <MaisVendidos />
       <LendariosCarousel />
       <Promo />
@@ -58,10 +62,18 @@ export function Home() {
           <h3>R$ 18000,00</h3>
           <Subtitulo>Em até 12x sem juros</Subtitulo>
           <Button> Adicionar ao carrinho </Button>
-          <ButtonDetalhes>+ detalhes</ButtonDetalhes>
+          <ButtonDetalhes
+            onClick={toggleModal}>
+            + detalhes
+            </ButtonDetalhes>
+            <Modal
+              title={'My modal'}
+              isOpen={isModalOpen}
+              onClose={toggleModal}>
+            
+              </Modal>
         </Card>
       </ContainerCard>
-
       <Top>
         <button>
           <AnchorLink href="#logo">↑</AnchorLink>
