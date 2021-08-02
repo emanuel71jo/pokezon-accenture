@@ -1,7 +1,6 @@
 import React from "react";
 import { FiX } from "react-icons/fi";
 import { ButtonAdicionarCarrinho, ButtonClose, Foto, ModalBack, ModalBox, ModalContent, ModalOverlay, ModalTitle } from './styles'
-import Swal from 'sweetalert2'
 
 interface ModalProps{
     title: string;
@@ -9,7 +8,7 @@ interface ModalProps{
     onClose: () => void;
 }
 
-export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose }) => {
     const outsideRef = React.useRef(null);
 
     const handleCloseOnOverlay = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -27,7 +26,7 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
             <Foto>
               <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" />
             </Foto>
-        <ButtonAdicionarCarrinho >
+        <ButtonAdicionarCarrinho>
           Quero pra mim!
         </ButtonAdicionarCarrinho>
         <ModalTitle>
@@ -47,8 +46,6 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
             <p>Altura:</p>
 
             <p>Habilidades:</p>
-
-          { children }
         </ModalContent>
         <ButtonClose onClick={onClose}>
         <FiX color="black" size="1.3rem" />

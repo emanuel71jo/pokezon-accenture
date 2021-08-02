@@ -22,6 +22,10 @@ export const ModalOverlay = styled.div`
  `;
 export const ModalBox = styled.div`
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-gap: 20px;
     width: 50%;
     height: 60%;
     margin: 0 10%;
@@ -32,7 +36,11 @@ export const ModalBox = styled.div`
     cursor: auto;
 `;
 export const ModalTitle = styled.div`
-    text-align: right;
+    grid-column-start:3;
+    grid-column-end: 4;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
     top: 8.19%;
     bottom: 77.35%;
     font-family: Pokemon Solid;
@@ -42,12 +50,16 @@ export const ModalTitle = styled.div`
     line-height: 125.2%;
 `;
 export const ModalContent = styled.div`
-    text-align: top;
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end:3;
+    text-align: center;
     justify-content: top;
-    align-items: center;
+    align-items: rigth;
     line-height: 1.8;
+
 `;
 export const ModalClose = styled.div`
   position: absolute;
@@ -57,25 +69,35 @@ export const ModalClose = styled.div`
   transform-origin: 50% 50%;
 `;
 export const ButtonAdicionarCarrinho = styled.button`
+    position: absolute;
     background-color: #fd4602;
     border-radius: 20px;
     box-shadow: 0px 4px 4px #00000040;
     height: 44px;
-    margin-left: 13px;
     width: 178px;
-    position: absolute;
-    left: 70.41%;
-    right: 3.64%;
-    top: 83.13%;
-    bottom: 6.27%;
+    bottom: 7%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+
     
     `;
 export const Foto = styled.div`
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end:3;
     vertical-align: top;
     height: 100%!important;
     width: auto!important;
 
 `;
 export const ButtonClose = styled.div`
+align-items: rigth;
+grid-column-start: 5;
+
+
+
+
+    
 
 `
