@@ -1,5 +1,7 @@
 import React from "react";
-import { ModalBack, ModalBox, ModalContent, ModalOverlay, ModalTitle } from './styles'
+import { FiX } from "react-icons/fi";
+import { ButtonAdicionarCarrinho, ButtonClose, Foto, ModalBack, ModalBox, ModalContent, ModalOverlay, ModalTitle } from './styles'
+import Swal from 'sweetalert2'
 
 interface ModalProps{
     title: string;
@@ -17,21 +19,40 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
     }
 
     return isOpen ? (
-        <ModalBack>
+    <ModalBack>
       <ModalOverlay
         ref={outsideRef}
-        onClick={handleCloseOnOverlay}
-      />
+        onClick={handleCloseOnOverlay}/>
       <ModalBox>
-        <button onClick={onClose}>
-          close
-        </button>
+            <Foto>
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" />
+            </Foto>
+        <ButtonAdicionarCarrinho >
+          Quero pra mim!
+        </ButtonAdicionarCarrinho>
         <ModalTitle>
           {title}
         </ModalTitle>
         <ModalContent>
+            <p>ID:</p>
+
+            <p>Tipo:</p>
+
+            <p>Região:</p>
+
+            <p>Geração:</p>
+
+            <p>Peso:</p>
+
+            <p>Altura:</p>
+
+            <p>Habilidades:</p>
+
           { children }
         </ModalContent>
+        <ButtonClose onClick={onClose}>
+        <FiX color="black" size="1.3rem" />
+        </ButtonClose>
       </ModalBox>
     </ModalBack>
   ) : null;

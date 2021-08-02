@@ -1,3 +1,4 @@
+import { Top } from './../../pages/Home/styles';
 import styled from "styled-components";
 
 export const ModalBack = styled.div`
@@ -21,7 +22,8 @@ export const ModalOverlay = styled.div`
  `;
 export const ModalBox = styled.div`
     position: relative;
-    width: 80%;
+    width: 50%;
+    height: 60%;
     margin: 0 10%;
     padding: 50px;
     box-sizing: border-box;
@@ -30,13 +32,22 @@ export const ModalBox = styled.div`
     cursor: auto;
 `;
 export const ModalTitle = styled.div`
-    color: #9E25FC;
-    font-size: 30px;
+    text-align: right;
+    top: 8.19%;
+    bottom: 77.35%;
+    font-family: Pokemon Solid;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 125.2%;
 `;
 export const ModalContent = styled.div`
-     margin-top: 30px;
-  color: #6B6B6B;
-  font-size: 16px;
+    text-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    line-height: 1.8;
 `;
 export const ModalClose = styled.div`
   position: absolute;
@@ -45,3 +56,26 @@ export const ModalClose = styled.div`
   transition: transform 250ms ease-in-out;
   transform-origin: 50% 50%;
 `;
+export const ButtonAdicionarCarrinho = styled.button`
+    background-color: #fd4602;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 44px;
+    margin-left: 13px;
+    width: 178px;
+    position: absolute;
+    left: 70.41%;
+    right: 3.64%;
+    top: 83.13%;
+    bottom: 6.27%;
+    
+    `;
+export const Foto = styled.div`
+    vertical-align: top;
+    height: 100%!important;
+    width: auto!important;
+
+`;
+export const ButtonClose = styled.div`
+
+`
