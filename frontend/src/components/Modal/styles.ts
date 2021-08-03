@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mixins } from "../../styles/mixins";
 
 export const ModalBack = styled.div`
   position: fixed;
@@ -17,76 +18,72 @@ export const ModalOverlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
 `;
 export const ModalBox = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 10vh 80vh 10vh;
-  grid-gap: 20px;
-  width: 50%;
-  height: 60%;
-  margin: 0 10%;
-  padding: 50px;
-  box-sizing: border-box;
-  border-radius: 10px;
+  height: 25rem;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
   background-color: white;
   cursor: auto;
 `;
 export const ModalTitle = styled.div`
-  grid-column-start: 3;
-  grid-column-end: 4;
-  position: absolute;
+  grid-column-start: 1;
+  grid-column-end: 6;
   text-align: center;
   justify-content: center;
-  top: 8.19%;
-  bottom: 77.35%;
   font-family: Pokemon Solid;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
-  line-height: 125.2%;
+  line-height: 1rem;
 `;
 export const ModalContent = styled.div`
-  position: absolute;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 3;
   text-align: center;
-  justify-content: top;
-  align-items: rigth;
-  line-height: 1.8;
-`;
-export const ModalClose = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  transition: transform 250ms ease-in-out;
-  transform-origin: 50% 50%;
+  line-height: 1.5;
 `;
 export const ButtonAdicionarCarrinho = styled.button`
   position: absolute;
-  background-color: #fd4602;
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 44px;
-  width: 178px;
-  bottom: 7%;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  color: white;
+  font-size: ${mixins.typography.paragraph};
+  font-family: ${mixins.fonts.normal};
+  background: gray;
+  right: 35px;
+  bottom: 35px;
+  width: 35%;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  transition: 0.2s;
+
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    background-color: ${mixins.colors.buttoncolor};
+  }
 `;
 export const Foto = styled.div`
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 3;
-  vertical-align: top;
-  height: 100% !important;
+  text-align: center;
+  height: 100%;
   width: auto !important;
 `;
 export const ButtonClose = styled.div`
-  align-items: rigth;
-  grid-column-start: 5;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 `;
