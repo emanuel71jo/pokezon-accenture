@@ -12,6 +12,7 @@ import {
   Container,
   ProductTable,
   Total,
+  Button,
   Modal,
   Wrapper,
   ButtonExitModal,
@@ -40,9 +41,10 @@ export function Cart() {
             <ButtonExitModal onClick={handleToogleShowModal}>
               <FiX color="black" size="1.3rem" />
             </ButtonExitModal>
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1AYWDCSu8E69WHZKThclSjstlfPFR1086Tg&usqp=CAU'/> 
-            <h1>Compra finalizada</h1>
-            <h2>Em breve você receberá um e-mail com todos os detalhes!!!</h2>
+            <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/814.png'/> 
+            <h1>Compra realizada com sucesso!</h1> 
+            <h2>Em breve você receberá os seus pokémons para iniciar sua jornada, fique atento.</h2>
+            <Button><a href="http://localhost:3000/home">Voltar para tela inicial</a></Button>
           </Wrapper>
         </Modal>
       )}
@@ -64,7 +66,7 @@ export function Cart() {
                   <img src={item.item.image} alt={item.item.name} />
                 </td>
                 <td>
-                  <strong>{item.item.id}</strong>
+                  <strong>Nº: {item.item.id}</strong>
                   <span>{item.item.name}</span>
                 </td>
                 <td>

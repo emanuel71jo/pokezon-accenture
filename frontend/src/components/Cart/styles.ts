@@ -3,13 +3,14 @@ import { darken, lighten } from "polished";
 import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
+
   padding: 30px;
   display: flex;
   background: #e5e5e5;
   padding: 50px 80px 50px 80px;
-
   width: 100%;
   height: 100%;
+  background-color:${mixins.colors.background};
 
   footer {
     margin-top: 30px;
@@ -50,6 +51,13 @@ export const Container = styled.div`
       }
     }
   }
+  @media screen and (max-width: 425px){
+  display: flex;
+  padding: 25px 40px 25px 40px;
+  width: 100%;
+  height: 100%;
+  }
+
 `;
 export const CartTable = styled.table`
   width: 100%; // tamanho do elemento (antes 1500px)
@@ -60,6 +68,12 @@ export const CartTable = styled.table`
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); // sombra da tabela
   padding: 50px 50px 50px 50px; // distancia da borta
+
+  @media screen and (max-width: 425px){
+    width: 100%;
+    flex-direction: row;
+
+  }
 `;
 
 export const ProductTable = styled.table`
@@ -130,6 +144,11 @@ export const ProductTable = styled.table`
     display: block;
     font-size: 18px;
   }
+  @media screen and (max-width: 425px){
+    img{
+      height: 50px;
+    }
+  }
 `;
 
 export const Total = styled.div`
@@ -170,25 +189,32 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   padding: 1.5rem 2.5rem;
   display: flex;
-  //align-items: center; //flex-start
-  //justify-content: space-evenly; //fez a imagem ir para cima
   flex-direction: column;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
 
   // imagem da Caixa de finalização de pedido
   img {
-    height: 100px;
-    width: 100px;
-    //align-items: center;
-    //justify-content: center;
-    //align-content: center;
+    height: 115px;
+    width: 115px;
     align-self: center;
   }
-  h1 {
+  h1 { // Tamnho e local da fonte do titulo da caixa de finalização de pedido
     align-self: center;
+    text-align: center;
+    font-size: 25px;
+    color: #0e0a0a;
+    padding: 0.25em 0.25em 0.25em;
+    font-weight: bold;
+    color: ${mixins.colors.buttoncolor};  
   }
-  h2 {
+  h2 { //Tamnho e local da fonte do texto de corpo da caixa de finalização de pedido
     align-self: center;
+    text-align: center;
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: normal;
+    font-family: ${mixins.fonts.normal};
+    color: ${mixins.colors.darkgray};
   }
 `;
 
@@ -199,3 +225,24 @@ export const ButtonExitModal = styled.button`
   background-color: transparent;
   align-self: flex-end; //baseline
 `;
+
+export const Button = styled.button`
+align-self: center;
+margin-top: 1.2rem;
+color: red;
+font-size: ${mixins.typography.paragraph};
+font-family: ${mixins.fonts.normal};
+background: linear-gradient(288deg, rgba(241,101,54,1) 10%, rgba(251,102,53,1) 54%, rgba(241,101,54,1) 98%);
+width: 40%;
+height: 2rem;
+border: none;
+border-radius: 8px;
+transition: 0.2s;
+&:hover:not(:disabled) {
+    opacity: 0.8;
+    }
+    &:disabled {
+    background-color: ${mixins.colors.buttoncolor};
+    cursor: not-allowed;
+    }
+`

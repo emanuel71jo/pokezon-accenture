@@ -3,6 +3,5 @@ import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 80vh;
-  background-color: ${mixins.colors.background};
+  min-height: 80vh; 
 `;
