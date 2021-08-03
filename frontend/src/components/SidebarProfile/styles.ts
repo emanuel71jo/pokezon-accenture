@@ -12,11 +12,25 @@ export const ContainerImg = styled.div `
             margin-bottom: 1.5rem;
             font-size: 1rem;
         }
+
+   @media screen and (max-width: 425px) {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+    span {
+        font-size: 0.9rem;
+    }
+  }
 `
 
 export const Imagem = styled.img `
   height: 8rem;  
   border-radius: 50%;
+  
+  @media screen and (max-width: 425px) {
+   height: 4rem;
+   margin-right: 1rem;
+  }
 `
 
 export const Sidebar = styled.div `
@@ -30,7 +44,6 @@ export const Sidebar = styled.div `
     ul li a.active {
         font-weight: bolder;
         color: ${mixins.colors.darkgray};
-      
         border-left: 4px solid orange;
     } 
 
@@ -42,5 +55,22 @@ export const Sidebar = styled.div `
        padding: 0.8rem;
     } 
     
- 
+    @media screen and (max-width: 425px) {
+        width: 100%;
+        ul {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        ul li {
+           padding: 0.4rem;
+        } 
+        ul li a.active {
+            font-weight: bolder;
+            color: ${mixins.colors.darkgray};
+            border-left: none;
+    } 
+  }
 `

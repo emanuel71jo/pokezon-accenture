@@ -13,6 +13,26 @@ export const ContainerProfile = styled.div `
             margin-bottom: 1rem;
             color: ${mixins.colors.gray};
         }
+
+    
+  @media screen and (max-width: 425px) {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 80%;
+  
+  h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: ${mixins.colors.gray};
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+  }
+
+}
 `
 
 export const Container = styled.div `
@@ -26,6 +46,12 @@ export const Dados = styled.div `
     width: 40rem;
     border-radius: 0.3rem;
     border: 0.10rem solid #D8D8D8;
+
+    
+  @media screen and (max-width: 425px) {
+  margin-bottom: 2rem;
+  width: 100%;
+ }
 `
 
 export const Pedido = styled.div `
@@ -57,6 +83,36 @@ export const Pedido = styled.div `
         span {
             font-size: 1rem ;
         }
+
+        @media screen and (max-width: 425px) {
+        padding: 0.3rem 1rem;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        .ID {
+            margin-right: auto; 
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+        section div {
+            margin-bottom: 0.5rem;
+            margin-right: 3rem;
+            display: flex;
+            flex-direction: column;
+            }
+            h3 {
+            font-family: ${mixins.fonts.normal};
+            color: ${mixins.colors.gray};
+            font-size: 0.6rem;
+        }
+        span {
+            font-size: 0.8rem ;
+        }
+}
 `
 
 export const DadosPedido = styled.div `
@@ -82,6 +138,27 @@ export const DadosPedido = styled.div `
                 display: flex;
                 flex-direction: column;
             }
+
+    @media screen and (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 1.5rem;
+    width: 100%;
+        section img {
+        height: 5rem;
+        }
+        section div {
+        padding-left: 6rem;
+        }
+        .nome {
+        margin-bottom: 0.3rem;
+        }
+        .data {
+        margin-bottom: 0.3rem;
+        }
+       
+}
 `
 
 export const Button = styled.button `
@@ -105,4 +182,23 @@ export const Button = styled.button `
     background-color: ${mixins.colors.buttoncolor};
     cursor: not-allowed;
     } 
+
+    
+  @media screen and (max-width: 425px) {
+    margin-top: 1rem;
+    height: 1.8rem;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+
+    &:hover:not(:disabled) {
+    opacity: 0.8;
+    }
+
+    &:disabled {
+    background-color: ${mixins.colors.buttoncolor};
+    cursor: not-allowed;
+    } 
+  }
 `

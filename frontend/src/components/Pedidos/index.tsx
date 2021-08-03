@@ -47,7 +47,7 @@ export function Pedidos() {
           </div>
        </section>
       
-        <Button >DETALHES</Button>
+        <Button >+ Detalhes</Button>
       
       </DadosPedido>
 
