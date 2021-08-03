@@ -9,7 +9,7 @@ const handleBackgroundType = (color: string) => {
       return `${mixins.colorspokemons.dragon}`;
     case "Bug":
       return `${mixins.colorspokemons.bug}`;
-    case "Eletric":
+    case "Electric":
       return `${mixins.colorspokemons.electric}`;
     case "Fairy":
       return `${mixins.colorspokemons.fairy}`;
@@ -29,7 +29,7 @@ const handleBackgroundType = (color: string) => {
       return `${mixins.colorspokemons.water}`;
     case "Steel":
       return `${mixins.colorspokemons.stell}`;
-    case "Fighthing":
+    case "Fighting":
       return `${mixins.colorspokemons.fighthing}`;
     case "Flying":
       return `${mixins.colorspokemons.flying}`;
@@ -123,8 +123,8 @@ export const Top = styled.div`
   align-items: center;
   position: relative;
   top: -2rem;
-    display: flex;
-    margin-right: 1rem;
-    justify-content: flex-end;
-    height: 3.3rem;
+  display: flex;
+  margin-right: 1rem;
+  justify-content: flex-end;
+  height: 3.3rem;
 `;

@@ -1,8 +1,9 @@
 import { Item, BannerPreco, ButtonDetalhes, Button } from "./styles";
 import Carousel from "react-elastic-carousel";
-import PokesPromotion from "../../services/DatasCarousel/PokesPromotion";
+import { PokesPromotion } from "../../services/DatasCarousel/PokesPromotion";
 import "./resetCarousel.css";
 import { useShopping } from "../../hooks/useShopping";
+import { getPricePokemon } from "../../utils/getPricePokemon";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -22,18 +23,22 @@ const PromocaoCarousel = () => {
         {PokesPromotion.map((Pokemon) => (
           <Item key={Pokemon.id}>
             <img src={Pokemon.image} alt="Pokemon Promoção" />
-            <h2> {Pokemon.name} </h2>
+            <h2>{Pokemon.name}</h2>
             <p className="subtitulo">
-              {" "}
-              {Pokemon.types} | {Pokemon.abilities}{" "}
+              {Pokemon.types[0].type.name} | {Pokemon.abilities[0].ability.name}
             </p>
             <BannerPreco>Preço imperdível!</BannerPreco>
 
-            <h3>R$ 18000,00</h3>
+            <h3>
+              {getPricePokemon(
+                Pokemon.abilities.length || 0,
+                Pokemon.stats,
+                Pokemon.types
+              )}
+            </h3>
             <p className="subtitulo">Em até 12x sem juros</p>
             <Button onClick={() => addItemToShopping(Pokemon)}>
-              {" "}
-              Adicionar ao carrinho{" "}
+              Adicionar ao carrinho
             </Button>
             <ButtonDetalhes>+ detalhes</ButtonDetalhes>
           </Item>

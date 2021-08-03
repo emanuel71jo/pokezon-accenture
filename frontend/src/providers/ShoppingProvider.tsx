@@ -1,30 +1,58 @@
-import { ReactNode, useState } from 'react'
-import { ShoppingContext } from '../contexts/ShoppingContext'
+import { ReactNode, useState } from "react";
+import { ShoppingContext } from "../contexts/ShoppingContext";
+import { useToasts } from "react-toast-notifications";
+import { MessageToast } from "../components/MessageToast";
 
 type ShoppingProviderProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
+type Ability = {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+};
 
-interface IItem {
-  id: number
-  name: string
-  image: string
-  types: string
-  types2: string
-  abilities: string
-  abilities2: string
+type Stat = {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+};
+
+type TypePokemon = {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+};
+
+interface IPokemon {
+  abilities: Array<Ability>;
+  id: number;
+  name: string;
+  stats: Array<Stat>;
+  types: Array<TypePokemon>;
+  image: string;
 }
 
 interface IItemsShopping {
-  item: IItem
-  count: number
+  item: IPokemon;
+  count: number;
 }
 
 export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
-  const [shopping, setShopping] = useState<Array<IItemsShopping>>([])
+  const { addToast } = useToasts();
 
-  function addItemToShopping(item: IItem) {
-    const itemFinded = shopping.find((value) => value.item.name === item.name)
+  const [shopping, setShopping] = useState<Array<IItemsShopping>>([]);
+
+  function addItemToShopping(item: IPokemon) {
+    const itemFinded = shopping.find((value) => value.item.name === item.name);
 
     if (itemFinded) {
       setShopping((oldValue) =>
@@ -33,19 +61,23 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
             ? { ...value, count: value.count + 1 }
             : value
         )
-      )
+      );
     } else {
-      setShopping((oldValue) => [...oldValue, { item, count: 1 }])
+      setShopping((oldValue) => [...oldValue, { item, count: 1 }]);
+      addToast(<MessageToast pokeName={item.name} />, {
+        appearance: "success",
+        autoDismiss: true,
+      });
     }
   }
 
-  function removeItemFromShopping(item: IItem) {
-    const itemFinded = shopping.find((value) => value.item.name === item.name)
+  function removeItemFromShopping(item: IPokemon) {
+    const itemFinded = shopping.find((value) => value.item.name === item.name);
 
     if (itemFinded?.count === 1) {
       setShopping((oldValue) =>
         oldValue.filter((value) => value.item.name !== item.name)
-      )
+      );
     } else {
       setShopping((oldValue) =>
         oldValue.map((value) =>
@@ -53,18 +85,18 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
             ? { ...value, count: value.count - 1 }
             : value
         )
-      )
+      );
     }
   }
 
-  function removeAllItemFromShopping(item: IItem) {
+  function removeAllItemFromShopping(item: IPokemon) {
     setShopping((oldValue) =>
       oldValue.filter((value) => value.item.name !== item.name)
-    )
+    );
   }
 
   function getTotalItems(): number {
-    return shopping.length
+    return shopping.length;
   }
 
   return (
@@ -79,5 +111,5 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
     >
       {children}
     </ShoppingContext.Provider>
-  )
-}
+  );
+};

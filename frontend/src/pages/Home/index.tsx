@@ -1,35 +1,36 @@
-import CarouselBanner from '../../components/CarouselBanner'
-import PromocaoCarousel from '../../components/PromocaoCarousel'
-import LendariosCarousel from '../../components/LendariosCarousel'
-import { Top, Container, ContainerCard, Search, TypeButton, ButtonsTypes, Input } from './styles'
-import MaisVendidos from '../../components/MaisVendidos'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import Promo from '../../components/BannerSolo';
+import CarouselBanner from "../../components/CarouselBanner";
+import PromocaoCarousel from "../../components/PromocaoCarousel";
+import LendariosCarousel from "../../components/LendariosCarousel";
+import {
+  Top,
+  Container,
+  ContainerCard,
+  Search,
+  TypeButton,
+  ButtonsTypes,
+  Input,
+} from "./styles";
+import MaisVendidos from "../../components/MaisVendidos";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import Promo from "../../components/BannerSolo";
 import React, { useState, useEffect } from "react";
-import api from '../../services/datasPokemons/api'
-import PokemonCard from '../../components/PokemonCard'
-
+import api from "../../services/datasPokemons/api";
+import PokemonCard from "../../components/PokemonCard";
 
 export function Home() {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    const fetchPokemons = async () => {
-      await api
-        .get(`/pokemon?limit=20&offset=0`)
-        .then((response) => {
-          setPokemons(response.data.results);
-        });
-    };
-    fetchPokemons();
+    api.get(`/pokemon?limit=20&offset=0`).then((response) => {
+      setPokemons(response.data.results);
+    });
   }, []);
-
 
   const typesButtons = [
     "Fire",
     "Dragon",
     "Bug",
-    "Eletric",
+    "Electric",
     "Fairy",
     "Ice",
     "Poison",
@@ -39,20 +40,20 @@ export function Home() {
     "Ghost",
     "Water",
     "Steel",
-    "Fighthing",
+    "Fighting",
     "Flying",
     "Ground",
     "Psychic",
   ];
- 
+
   return (
-      <Container>
+    <Container>
       <CarouselBanner />
       <PromocaoCarousel />
       <MaisVendidos />
       <LendariosCarousel />
       <Promo />
-     
+
       <Search>
         <Input>
           <input type="text" placeholder="Pesquisar" />
@@ -64,17 +65,15 @@ export function Home() {
         </ButtonsTypes>
       </Search>
       <ContainerCard>
-          {pokemons.map(pokemon => {
-            return <PokemonCard pokemon={pokemon}/>
-          })}
-
+        {pokemons.map((pokemon) => {
+          return <PokemonCard pokemon={pokemon} />;
+        })}
       </ContainerCard>
       <Top>
-        <button >
+        <button>
           <AnchorLink href="#logo">↑</AnchorLink>
         </button>
       </Top>
     </Container>
-
   );
 }

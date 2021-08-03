@@ -1,26 +1,51 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
-interface IItem {
-  id: number
-  name: string
-  image: string
-  types: string
-  types2: string
-  abilities: string
-  abilities2: string
+type Ability = {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+};
+
+type Stat = {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+};
+
+type TypePokemon = {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+};
+
+interface IPokemon {
+  abilities: Array<Ability>;
+  id: number;
+  name: string;
+  stats: Array<Stat>;
+  types: Array<TypePokemon>;
+  image: string;
 }
 
 interface IItemsShopping {
-  item: IItem
-  count: number
+  item: IPokemon;
+  count: number;
 }
 
 interface ShoppingContextData {
-  shopping: Array<IItemsShopping>
-  addItemToShopping: (item: IItem) => void
-  removeItemFromShopping: (item: IItem) => void
-  removeAllItemFromShopping: (item: IItem) => void
-  getTotalItems: () => number
+  shopping: Array<IItemsShopping>;
+  addItemToShopping: (item: IPokemon) => void;
+  removeItemFromShopping: (item: IPokemon) => void;
+  removeAllItemFromShopping: (item: IPokemon) => void;
+  getTotalItems: () => number;
 }
 
-export const ShoppingContext = createContext({} as ShoppingContextData)
+export const ShoppingContext = createContext({} as ShoppingContextData);
