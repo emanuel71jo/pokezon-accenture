@@ -70,7 +70,7 @@ export function Home() {
         })}
       </ContainerCard>
       <Top>
-        <button>
+        <button >
           <AnchorLink href="#logo">↑</AnchorLink>
         </button>
       </Top>

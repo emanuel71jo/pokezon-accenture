@@ -109,12 +109,12 @@ export const ContainerCard = styled.div`
 
 export const Top = styled.div`
   button {
+   background: gray;
     font-size: 1.5rem;
-    padding: 0.7rem 1.4rem 0.7rem;
-    border-radius: 50%;
-    background: #fd4602;
+    padding: 0.4rem 1rem 0.4rem;
+    border-radius: 1px;
     border: 0px;
-    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
   transition: margin-top 250ms;
