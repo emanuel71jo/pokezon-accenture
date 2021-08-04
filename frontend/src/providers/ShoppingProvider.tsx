@@ -51,7 +51,7 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
 
   const [shopping, setShopping] = useState<Array<IItemsShopping>>([]);
 
-  function addItemToShopping(item: IPokemon) {
+  function addItemToShopping(item: IPokemon, isShopping = false) {
     const itemFinded = shopping.find((value) => value.item.name === item.name);
 
     if (itemFinded) {
@@ -64,11 +64,13 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
       );
     } else {
       setShopping((oldValue) => [...oldValue, { item, count: 1 }]);
+    }
+
+    if (!isShopping)
       addToast(<MessageToast pokeName={item.name} />, {
         appearance: "success",
         autoDismiss: true,
       });
-    }
   }
 
   function removeItemFromShopping(item: IPokemon) {

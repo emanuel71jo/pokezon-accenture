@@ -26,10 +26,19 @@ type TypePokemon = {
 
 interface IPokemon {
   abilities: Array<Ability>;
+  base_experience: number; //
+  height: number; //
   id: number;
   name: string;
+  order: number; //
   stats: Array<Stat>;
   types: Array<TypePokemon>;
+  weight: number; //
+  species: {
+    //
+    name: string;
+    url: string;
+  };
   image: string;
 }
 
@@ -37,6 +46,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   {
     id: 25,
     name: "Pikachu",
+    base_experience: 112,
+    height: 4,
+    order: 35,
+    species: {
+      name: "pikachu",
+      url: "https://pokeapi.co/api/v2/pokemon-species/25/",
+    },
+    weight: 60,
     image: "https://projectpokemon.org/images/normal-sprite/pikachu.gif",
     abilities: [
       {
@@ -118,6 +135,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   },
   {
     id: 63,
+    base_experience: 62,
+    height: 9,
+    order: 100,
+    species: {
+      name: "abra",
+      url: "https://pokeapi.co/api/v2/pokemon-species/63/",
+    },
+    weight: 195,
     name: "Abra",
     image: "https://projectpokemon.org/images/normal-sprite/abra.gif",
     abilities: [
@@ -209,6 +234,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   {
     id: 1,
     name: "Bulbasaur",
+    base_experience: 64,
+    height: 7,
+    order: 1,
+    species: {
+      name: "bulbasaur",
+      url: "https://pokeapi.co/api/v2/pokemon-species/1/",
+    },
+    weight: 69,
     image: "https://projectpokemon.org/images/normal-sprite/bulbasaur.gif",
     abilities: [
       {
@@ -297,6 +330,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   },
   {
     id: 23,
+    base_experience: 58,
+    height: 20,
+    order: 32,
+    species: {
+      name: "ekans",
+      url: "https://pokeapi.co/api/v2/pokemon-species/23/",
+    },
+    weight: 69,
     name: "Ekans",
     image: "https://projectpokemon.org/images/normal-sprite/ekans.gif",
     abilities: [
@@ -387,6 +428,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   },
   {
     id: 6,
+    base_experience: 240,
+    height: 17,
+    order: 7,
+    species: {
+      name: "charizard",
+      url: "https://pokeapi.co/api/v2/pokemon-species/6/",
+    },
+    weight: 905,
     name: "Charizard",
     image: "https://projectpokemon.org/images/normal-sprite/charizard.gif",
     abilities: [
@@ -477,6 +526,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   {
     id: 7,
     name: "Squirtle",
+    base_experience: 63,
+    height: 5,
+    order: 10,
+    species: {
+      name: "squirtle",
+      url: "https://pokeapi.co/api/v2/pokemon-species/7/",
+    },
+    weight: 90,
     image: "https://projectpokemon.org/images/normal-sprite/squirtle.gif",
     abilities: [
       {
@@ -559,6 +616,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   {
     id: 4,
     name: "Charmander",
+    base_experience: 62,
+    height: 6,
+    order: 5,
+    species: {
+      name: "charmander",
+      url: "https://pokeapi.co/api/v2/pokemon-species/4/",
+    },
+    weight: 85,
     image: "https://projectpokemon.org/images/normal-sprite/charmander.gif",
     abilities: [
       {
@@ -641,6 +706,14 @@ export const PokesMaisVendidos: Array<IPokemon> = [
   {
     id: 10,
     name: "Caterpie",
+    base_experience: 39,
+    height: 3,
+    order: 14,
+    species: {
+      name: "caterpie",
+      url: "https://pokeapi.co/api/v2/pokemon-species/10/",
+    },
+    weight: 29,
     image: "https://projectpokemon.org/images/normal-sprite/caterpie.gif",
     abilities: [
       {

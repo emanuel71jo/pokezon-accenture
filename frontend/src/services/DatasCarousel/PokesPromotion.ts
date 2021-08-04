@@ -26,16 +26,33 @@ type TypePokemon = {
 
 interface IPokemon {
   abilities: Array<Ability>;
+  base_experience: number; //
+  height: number; //
   id: number;
   name: string;
+  order: number; //
   stats: Array<Stat>;
   types: Array<TypePokemon>;
+  weight: number; //
+  species: {
+    //
+    name: string;
+    url: string;
+  };
   image: string;
 }
 
 export const PokesPromotion: Array<IPokemon> = [
   {
     id: 130,
+    base_experience: 189,
+    height: 65,
+    order: 200,
+    species: {
+      name: "gyarados",
+      url: "https://pokeapi.co/api/v2/pokemon-species/130/",
+    },
+    weight: 2350,
     name: "Gyarados",
     image: "https://projectpokemon.org/images/normal-sprite/gyarados.gif",
     types: [
@@ -125,6 +142,14 @@ export const PokesPromotion: Array<IPokemon> = [
   },
   {
     id: 193,
+    base_experience: 78,
+    height: 12,
+    order: 274,
+    species: {
+      name: "yanma",
+      url: "https://pokeapi.co/api/v2/pokemon-species/193/",
+    },
+    weight: 380,
     name: "Yanma",
     image: "https://projectpokemon.org/images/normal-sprite/yanma.gif",
     abilities: [
@@ -223,6 +248,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 9,
     name: "Exeggutor",
+    base_experience: 239,
+    height: 16,
+    order: 12,
+    species: {
+      name: "blastoise",
+      url: "https://pokeapi.co/api/v2/pokemon-species/9/",
+    },
+    weight: 855,
     image: "https://projectpokemon.org/images/normal-sprite/exeggutor.gif",
     abilities: [
       {
@@ -305,6 +338,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 173,
     name: "Butterfree",
+    base_experience: 44,
+    height: 3,
+    order: 61,
+    species: {
+      name: "cleffa",
+      url: "https://pokeapi.co/api/v2/pokemon-species/173/",
+    },
+    weight: 30,
     image: "https://projectpokemon.org/images/normal-sprite/butterfree.gif",
     abilities: [
       {
@@ -395,6 +436,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 59,
     name: "Arcanine",
+    base_experience: 194,
+    height: 19,
+    order: 95,
+    species: {
+      name: "arcanine",
+      url: "https://pokeapi.co/api/v2/pokemon-species/59/",
+    },
+    weight: 1550,
     image: "https://projectpokemon.org/images/normal-sprite/arcanine.gif",
     abilities: [
       {
@@ -485,6 +534,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 137,
     name: "Porygon",
+    base_experience: 79,
+    height: 8,
+    order: 213,
+    species: {
+      name: "porygon",
+      url: "https://pokeapi.co/api/v2/pokemon-species/137/",
+    },
+    weight: 365,
     image: "https://projectpokemon.org/images/normal-sprite/porygon.gif",
     abilities: [
       {
@@ -575,6 +632,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 108,
     name: "Lickitung",
+    base_experience: 77,
+    height: 12,
+    order: 162,
+    species: {
+      name: "lickitung",
+      url: "https://pokeapi.co/api/v2/pokemon-species/108/",
+    },
+    weight: 655,
     image: "https://projectpokemon.org/images/normal-sprite/lickitung.gif",
     abilities: [
       {
@@ -665,6 +730,14 @@ export const PokesPromotion: Array<IPokemon> = [
   {
     id: 100,
     name: "Voltorb",
+    base_experience: 66,
+    height: 5,
+    order: 149,
+    species: {
+      name: "voltorb",
+      url: "https://pokeapi.co/api/v2/pokemon-species/100/",
+    },
+    weight: 104,
     image: "https://projectpokemon.org/images/normal-sprite/voltorb.gif",
     abilities: [
       {

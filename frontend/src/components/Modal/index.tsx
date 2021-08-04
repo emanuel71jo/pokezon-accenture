@@ -1,24 +1,68 @@
-import React from "react";
-import { FiX } from "react-icons/fi";
+import { useState, useRef } from "react";
 import {
-  ButtonAdicionarCarrinho,
-  ButtonClose,
-  Foto,
+  Footer,
+  Header,
   ModalBack,
   ModalBox,
-  ModalContent,
-  ModalOverlay,
-  ModalTitle,
+  NavigationInfos,
+  WrapperInfos,
+  WrapperInfosNavigation,
+  WrapperTypes,
+  NavInfos,
 } from "./styles";
 
+type Ability = {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+};
+
+type Stat = {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+};
+
+type TypePokemon = {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+};
+interface IPokemon {
+  abilities: Array<Ability>;
+  base_experience: number;
+  height: number;
+  id: number;
+  name: string;
+  order: number;
+  stats: Array<Stat>;
+  types: Array<TypePokemon>;
+  weight: number;
+  species: {
+    name: string;
+    url: string;
+  };
+}
 interface ModalProps {
-  title: string;
-  isOpen: boolean;
   onClose: () => void;
+  pokemon: IPokemon;
+  pokemonUrl: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose }) => {
-  const outsideRef = React.useRef(null);
+export const Modal: React.FC<ModalProps> = ({
+  onClose,
+  pokemon,
+  pokemonUrl,
+}) => {
+  const outsideRef = useRef(null);
 
   const handleCloseOnOverlay = (
     e: React.MouseEvent<HTMLElement, MouseEvent>
@@ -28,34 +72,70 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose }) => {
     }
   };
 
-  return isOpen ? (
-    <ModalBack>
-      <ModalOverlay ref={outsideRef} onClick={handleCloseOnOverlay} />
+  const [isAbout, setIsAbout] = useState<boolean>(true);
+
+  return (
+    <ModalBack ref={outsideRef} onClick={handleCloseOnOverlay}>
       <ModalBox>
-        <Foto>
-          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" />
-        </Foto>
-        <ButtonAdicionarCarrinho>Quero pra mim!</ButtonAdicionarCarrinho>
-        <ModalTitle>{title}</ModalTitle>
-        <ModalContent>
-          <p>ID:</p>
+        <Header typePokemon={pokemon.types[0].type.name}>
+          <WrapperInfos>
+            <h1>
+              {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+            </h1>
+            <h4>#{String(pokemon.id).padStart(3, "0")}</h4>
+          </WrapperInfos>
+          <WrapperTypes>
+            {pokemon.types.map((value, index) => (
+              <div key={index}>{value.type.name}</div>
+            ))}
+          </WrapperTypes>
 
-          <p>Tipo:</p>
+          <img src={pokemonUrl} alt={pokemon.name} />
+        </Header>
+        <Footer>
+          <NavigationInfos>
+            <NavInfos
+              onClick={() => setIsAbout(true)}
+              typePokemon={pokemon.types[0].type.name}
+              isActive={!!isAbout}
+            >
+              Sobre
+            </NavInfos>
+            <NavInfos
+              onClick={() => setIsAbout(false)}
+              typePokemon={pokemon.types[0].type.name}
+              isActive={!isAbout}
+            >
+              Especificações
+            </NavInfos>
+          </NavigationInfos>
 
-          <p>Região:</p>
-
-          <p>Geração:</p>
-
-          <p>Peso:</p>
-
-          <p>Altura:</p>
-
-          <p>Habilidades:</p>
-        </ModalContent>
-        <ButtonClose onClick={onClose}>
-          <FiX color="black" size="1.3rem" />
-        </ButtonClose>
+          {!!isAbout ? (
+            <WrapperInfosNavigation>
+              <strong>Espécie</strong>
+              <span>{pokemon.species.name}</span>
+              <strong>Altura</strong>
+              <span>{pokemon.height} cm</span>
+              <strong>Peso</strong>
+              <span>{pokemon.weight} g</span>
+              <strong>Habilidades</strong>
+              <span>{pokemon.abilities[0].ability.name}</span>
+            </WrapperInfosNavigation>
+          ) : (
+            <WrapperInfosNavigation>
+              {pokemon.stats.map((stat) => (
+                <>
+                  <strong>
+                    {stat.stat.name.charAt(0).toUpperCase() +
+                      stat.stat.name.slice(1)}
+                  </strong>
+                  <span>{stat.base_stat} XP</span>
+                </>
+              ))}
+            </WrapperInfosNavigation>
+          )}
+        </Footer>
       </ModalBox>
     </ModalBack>
-  ) : null;
+  );
 };

@@ -23,19 +23,35 @@ type TypePokemon = {
     url: string;
   };
 };
-
 interface IPokemon {
   abilities: Array<Ability>;
+  base_experience: number; //
+  height: number; //
   id: number;
   name: string;
+  order: number; //
   stats: Array<Stat>;
   types: Array<TypePokemon>;
+  weight: number; //
+  species: {
+    //
+    name: string;
+    url: string;
+  };
   image: string;
 }
 
 export const PokesLegends: Array<IPokemon> = [
   {
     id: 150,
+    base_experience: 306,
+    height: 20,
+    order: 230,
+    weight: 1220,
+    species: {
+      name: "mewtwo",
+      url: "https://pokeapi.co/api/v2/pokemon-species/150/",
+    },
     name: "Mewtwo",
     image: "https://projectpokemon.org/images/normal-sprite/mewtwo.gif",
     abilities: [
@@ -118,6 +134,14 @@ export const PokesLegends: Array<IPokemon> = [
   },
   {
     id: 244,
+    base_experience: 261,
+    height: 21,
+    order: 322,
+    weight: 1980,
+    species: {
+      name: "entei",
+      url: "https://pokeapi.co/api/v2/pokemon-species/244/",
+    },
     name: "Entei",
     image: "https://projectpokemon.org/images/normal-sprite/entei.gif",
     abilities: [
@@ -200,6 +224,14 @@ export const PokesLegends: Array<IPokemon> = [
   },
   {
     id: 249,
+    base_experience: 306,
+    height: 52,
+    weight: 2160,
+    species: {
+      name: "lugia",
+      url: "https://pokeapi.co/api/v2/pokemon-species/249/",
+    },
+    order: 328,
     name: "Lugia",
     image: "https://projectpokemon.org/images/normal-sprite/lugia.gif",
     abilities: [
@@ -290,6 +322,14 @@ export const PokesLegends: Array<IPokemon> = [
   {
     id: 245,
     name: "Suicune",
+    base_experience: 261,
+    weight: 1870,
+    species: {
+      name: "suicune",
+      url: "https://pokeapi.co/api/v2/pokemon-species/245/",
+    },
+    order: 323,
+    height: 20,
     image: "https://projectpokemon.org/images/normal-sprite/suicune.gif",
     abilities: [
       {
@@ -371,6 +411,14 @@ export const PokesLegends: Array<IPokemon> = [
   },
   {
     id: 716,
+    base_experience: 306,
+    height: 30,
+    order: 833,
+    weight: 2150,
+    species: {
+      name: "xerneas",
+      url: "https://pokeapi.co/api/v2/pokemon-species/716/",
+    },
     name: "Xerneas",
     image: "https://projectpokemon.org/images/normal-sprite/xerneas.gif",
     abilities: [
@@ -445,6 +493,14 @@ export const PokesLegends: Array<IPokemon> = [
   },
   {
     id: 251,
+    base_experience: 270,
+    height: 6,
+    weight: 50,
+    species: {
+      name: "celebi",
+      url: "https://pokeapi.co/api/v2/pokemon-species/251/",
+    },
+    order: 330,
     name: "Celebi",
     image: "https://projectpokemon.org/images/normal-sprite/celebi.gif",
     abilities: [
@@ -526,6 +582,14 @@ export const PokesLegends: Array<IPokemon> = [
   },
   {
     id: 151,
+    weight: 40,
+    base_experience: 270,
+    order: 233,
+    species: {
+      name: "mew",
+      url: "https://pokeapi.co/api/v2/pokemon-species/151/",
+    },
+    height: 4,
     name: "Mew",
     image: "https://projectpokemon.org/images/normal-sprite/mew.gif",
     abilities: [
@@ -601,6 +665,14 @@ export const PokesLegends: Array<IPokemon> = [
   {
     id: 100,
     name: "Uxie",
+    base_experience: 66,
+    height: 5,
+    order: 149,
+    species: {
+      name: "voltorb",
+      url: "https://pokeapi.co/api/v2/pokemon-species/100/",
+    },
+    weight: 104,
     image: "https://projectpokemon.org/images/normal-sprite/uxie.gif",
     abilities: [
       {

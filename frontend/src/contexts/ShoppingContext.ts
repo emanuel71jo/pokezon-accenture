@@ -42,7 +42,7 @@ interface IItemsShopping {
 
 interface ShoppingContextData {
   shopping: Array<IItemsShopping>;
-  addItemToShopping: (item: IPokemon) => void;
+  addItemToShopping: (item: IPokemon, isShopping?: boolean) => void;
   removeItemFromShopping: (item: IPokemon) => void;
   removeAllItemFromShopping: (item: IPokemon) => void;
   getTotalItems: () => number;

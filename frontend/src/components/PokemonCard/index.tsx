@@ -1,8 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useShopping } from "../../hooks/useShopping";
 import { getPricePokemon } from "../../utils/getPricePokemon";
 import { Modal } from "../Modal";
-import { Card, Subtitulo, ButtonDetalhes, Button, Paragraph } from "./styles";
+import {
+  Card,
+  Subtitulo,
+  ButtonDetalhes,
+  Button,
+  Paragraph,
+  Wrapper,
+} from "./styles";
 
 type Ability = {
   ability: {
@@ -39,6 +47,10 @@ interface IPokemon {
   stats: Array<Stat>;
   types: Array<TypePokemon>;
   weight: number;
+  species: {
+    name: string;
+    url: string;
+  };
 }
 
 interface Props {
@@ -62,36 +74,51 @@ const PokemonCard = ({ pokemon }: Props) => {
     });
   }, [pokemon.url]);
 
-  const [isModalOpen, setModalState] = useState(false);
-  const toggleModal = () => setModalState(!isModalOpen);
+  const [isModalOpen, setModalState] = useState<boolean>(false);
+  const { addItemToShopping } = useShopping();
+
+  const openModal = () => setModalState(true);
+  const closeModal = () => setModalState(false);
 
   if (!pokemonData) return null;
 
   return (
-    <Card>
-      <img src={imagePokemon} alt="Pokemon" />
-      <h2> {pokemonData.name} </h2>
-      <Subtitulo color={pokemonData?.types[0].type.name}>
-        {pokemonData?.types[0].type.name} |{" "}
-        {pokemonData?.abilities[0].ability.name}
-      </Subtitulo>
+    <>
+      <Card>
+        <Wrapper onClick={openModal}>
+          <img src={imagePokemon} alt="Pokemon" />
+          <h2> {pokemonData.name} </h2>
+          <Subtitulo color={pokemonData?.types[0].type.name}>
+            {pokemonData?.types[0].type.name} |{" "}
+            {pokemonData?.abilities[0].ability.name}
+          </Subtitulo>
 
-      <h3>
-        {getPricePokemon(
-          pokemonData.abilities.length || 0,
-          pokemonData.stats,
-          pokemonData.types
-        )}
-      </h3>
-      <Paragraph>Em até 12x sem juros</Paragraph>
-      <Button> Adicionar ao carrinho </Button>
-      <ButtonDetalhes onClick={toggleModal}>+ detalhes</ButtonDetalhes>
-      <Modal
-        title={"My modal"}
-        isOpen={isModalOpen}
-        onClose={toggleModal}
-      ></Modal>
-    </Card>
+          <h3>
+            {getPricePokemon(
+              pokemonData.abilities.length || 0,
+              pokemonData.stats,
+              pokemonData.types
+            )}
+          </h3>
+          <Paragraph>Em até 12x sem juros</Paragraph>
+        </Wrapper>
+        <Button
+          onClick={() =>
+            addItemToShopping({ ...pokemonData, image: imagePokemon })
+          }
+        >
+          Adicionar ao carrinho
+        </Button>
+        <ButtonDetalhes onClick={openModal}>+ detalhes</ButtonDetalhes>
+      </Card>
+      {isModalOpen && (
+        <Modal
+          onClose={closeModal}
+          pokemon={pokemonData}
+          pokemonUrl={imagePokemon}
+        />
+      )}
+    </>
   );
 };
 

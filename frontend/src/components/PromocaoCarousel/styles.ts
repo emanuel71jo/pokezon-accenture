@@ -13,6 +13,28 @@ export const BannerPreco = styled.div`
   background-color: ${mixins.colorspokemons.water};
 `;
 
+export const Wrapper = styled.button`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 18rem; */
+  /* width: 13.5rem; */
+  background-color: white;
+
+  h3 {
+    color: black;
+  }
+
+  border: none;
+
+  font-size: 1rem;
+  img {
+    height: 5.5rem;
+  }
+`;
+
 export const Item = styled.div`
   display: flex;
   flex-direction: column;

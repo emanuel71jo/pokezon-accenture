@@ -1,21 +1,20 @@
 import { useState } from "react";
+import { FiX } from "react-icons/fi";
 import {
-  MdDelete,
   MdAddCircleOutline,
+  MdDelete,
   MdRemoveCircleOutline,
 } from "react-icons/md";
 import { useShopping } from "../../hooks/useShopping";
-import { FiX } from "react-icons/fi";
-
 import {
+  Button,
+  ButtonExitModal,
   CartTable,
   Container,
+  Modal,
   ProductTable,
   Total,
-  Button,
-  Modal,
   Wrapper,
-  ButtonExitModal,
 } from "./styles";
 
 export function Cart() {
@@ -41,10 +40,15 @@ export function Cart() {
             <ButtonExitModal onClick={handleToogleShowModal}>
               <FiX color="black" size="1.3rem" />
             </ButtonExitModal>
-            <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/814.png'/> 
-            <h1>Compra realizada com sucesso!</h1> 
-            <h2>Em breve você receberá os seus pokémons para iniciar sua jornada, fique atento.</h2>
-            <Button><a href="http://localhost:3000/home">Voltar para tela inicial</a></Button>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/814.png" />
+            <h1>Compra realizada com sucesso!</h1>
+            <h2>
+              Em breve você receberá os seus pokémons para iniciar sua jornada,
+              fique atento.
+            </h2>
+            <Button>
+              <a href="http://localhost:3000/home">Voltar para tela inicial</a>
+            </Button>
           </Wrapper>
         </Modal>
       )}
@@ -88,7 +92,7 @@ export function Cart() {
                     <button
                       type="button"
                       data-testid="increment-product"
-                      onClick={() => addItemToShopping(item.item)}
+                      onClick={() => addItemToShopping(item.item, true)}
                     >
                       <MdAddCircleOutline size={20} />
                     </button>

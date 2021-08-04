@@ -1,46 +1,6 @@
-import { mixins } from './../../styles/mixins';
+import { mixins } from "./../../styles/mixins";
 import styled from "styled-components";
-
-const handleBackgroundType = (color: string) => {
-  switch (color) {
-    case "fire":
-      return `${mixins.colorspokemons.fire}`;
-    case "dragon":
-      return `${mixins.colorspokemons.dragon}`;
-    case "bug":
-      return `${mixins.colorspokemons.bug}`;
-    case "electric":
-      return `${mixins.colorspokemons.electric}`;
-    case "fairy":
-      return `${mixins.colorspokemons.fairy}`;
-    case "ice":
-      return `${mixins.colorspokemons.ice}`;
-    case "poison":
-      return `${mixins.colorspokemons.poison}`;
-    case "rock":
-      return `${mixins.colorspokemons.rock}`;
-    case "grass":
-      return `${mixins.colorspokemons.grass}`;
-    case "normal":
-      return `${mixins.colorspokemons.normal}`;
-    case "ghost":
-      return `${mixins.colorspokemons.ghost}`;
-    case "water":
-      return `${mixins.colorspokemons.water}`;
-    case "steel":
-      return `${mixins.colorspokemons.stell}`;
-    case "fighting":
-      return `${mixins.colorspokemons.fighthing}`;
-    case "flying":
-      return `${mixins.colorspokemons.flying}`;
-    case "ground":
-      return `${mixins.colorspokemons.ground}`;
-    case "psychic":
-      return `${mixins.colorspokemons.psychic}`;
-    default:
-      return `${mixins.colors.gray}`;
-  }
-};
+import { handleBackgroundType } from "../../utils/handleBackgroundType";
 
 export const Subtitulo = styled.p`
   text-transform: uppercase;
@@ -57,6 +17,28 @@ export const Paragraph = styled.p`
   margin-bottom: 0.7rem;
 `;
 
+export const Wrapper = styled.button`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 18rem; */
+  /* width: 13.5rem; */
+  background-color: white;
+
+  h3 {
+    color: black;
+  }
+
+  border: none;
+
+  font-size: 1rem;
+  img {
+    height: 5.5rem;
+  }
+`;
+
 export const Card = styled.div`
   color: black;
   display: flex;
@@ -66,13 +48,10 @@ export const Card = styled.div`
   height: 18rem;
   width: 13.5rem;
   background-color: white;
-  h3 {
-    color: black;
-  }
 
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
   padding: 1rem 0;
-  margin: 1rem ;
+  margin: 1rem;
   border-radius: 1rem;
   font-size: 1rem;
   img {
