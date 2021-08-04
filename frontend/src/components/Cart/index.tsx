@@ -53,6 +53,7 @@ export function Cart() {
         </Modal>
       )}
       <CartTable>
+        <h2>Carrinho</h2>
         <ProductTable>
           <thead>
             <tr>
