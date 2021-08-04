@@ -105,6 +105,10 @@ export const ContainerCard = styled.div`
   margin: 2rem;
   padding: 1rem;
   justify-content: center;
+
+  .MuiPagination-root{
+    margin-top: 2.5rem;
+  }
 `;
 
 export const Top = styled.div`
@@ -112,7 +116,7 @@ export const Top = styled.div`
    background: gray;
     font-size: 1.5rem;
     padding: 0.4rem 1rem 0.4rem;
-    border-radius: 1px;
+    border-radius: 0.2rem;
     border: 0px;
     box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;

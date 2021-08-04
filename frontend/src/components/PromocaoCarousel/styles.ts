@@ -4,6 +4,7 @@ import { mixins } from "../../styles/mixins";
 export const BannerPreco = styled.div`
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
   padding: 0.1rem;
   font-size: 0.6rem;
   text-align: center;

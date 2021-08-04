@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { getPricePokemon } from "../../utils/getPricePokemon";
 import { Modal } from "../Modal";
-import { Card, Subtitulo, ButtonDetalhes, Button } from "./styles";
+import { Card, Subtitulo, ButtonDetalhes, Button, Paragraph } from "./styles";
 
 type Ability = {
   ability: {
@@ -71,7 +71,7 @@ const PokemonCard = ({ pokemon }: Props) => {
     <Card>
       <img src={imagePokemon} alt="Pokemon" />
       <h2> {pokemonData.name} </h2>
-      <Subtitulo>
+      <Subtitulo color={pokemonData?.types[0].type.name}>
         {pokemonData?.types[0].type.name} |{" "}
         {pokemonData?.abilities[0].ability.name}
       </Subtitulo>
@@ -83,7 +83,7 @@ const PokemonCard = ({ pokemon }: Props) => {
           pokemonData.types
         )}
       </h3>
-      <Subtitulo>Em até 12x sem juros</Subtitulo>
+      <Paragraph>Em até 12x sem juros</Paragraph>
       <Button> Adicionar ao carrinho </Button>
       <ButtonDetalhes onClick={toggleModal}>+ detalhes</ButtonDetalhes>
       <Modal
