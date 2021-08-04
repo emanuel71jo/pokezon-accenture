@@ -4,7 +4,6 @@ import { mixins } from "../../styles/mixins";
 
 export const Container = styled.div`
 
-  padding: 30px;
   display: flex;
   background: #e5e5e5;
   padding: 50px 80px 50px 80px;
@@ -25,7 +24,6 @@ export const Container = styled.div`
       align-items: center; // deixa o testo do botão finalizar centralizado
       margin-top: 0, 5rem;
       margin-bottom: 0, 5rem;
-      //margin-left: 1.8rem;
 
       color: #fff;
       background: linear-gradient(
@@ -37,11 +35,7 @@ export const Container = styled.div`
       font-size: ${mixins.typography.paragraph};
       font-family: ${mixins.fonts.normal};
       font-weight: bold;
-      text-transform: uppercase;
-
-      border-radius: 5px;
-      padding: 25px 25px;
-
+      padding: 20px;
       border: none;
       border-radius: 8px;
       transition: 0.2s;
@@ -52,10 +46,26 @@ export const Container = styled.div`
     }
   }
   @media screen and (max-width: 425px){
-  display: flex;
-  padding: 25px 40px 25px 40px;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    padding: 25px 20px 25px 20px;
+    width: 100%;
+      footer{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+          button{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 15px;
+          }
+      }
+
+
   }
 
 `;
@@ -68,11 +78,23 @@ export const CartTable = styled.table`
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); // sombra da tabela
   padding: 50px 50px 50px 50px; // distancia da borta
+  
+    h2{
+      display: none;
+    }
 
   @media screen and (max-width: 425px){
     width: 100%;
-    flex-direction: row;
-
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+      h2{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        color: ${mixins.colors.gray};
+      }
   }
 `;
 
@@ -117,6 +139,7 @@ export const ProductTable = styled.table`
       color: #1a1a1a;
       padding: 6px;
       width: 50px;
+      text-align: center;
     }
   }
   button {
@@ -145,9 +168,42 @@ export const ProductTable = styled.table`
     font-size: 18px;
   }
   @media screen and (max-width: 425px){
-    img{
-      height: 50px;
-    }
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+      thead th{
+        display: none;
+      }
+        tbody td {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: none;
+        }
+          img{
+            height: 75px;
+            margin-top: 2rem;
+          }
+            strong{
+              display: none;
+            }
+              span{
+                font-size: 16px;
+                margin-top: 3px;
+              }
+                div{
+                    input{
+                      border: 0.5px solid #ddd;
+                      width: 35px;
+                      height: 25px;
+                    }
+                }
+                      h2{
+                        font-size: 14px;
+                      }
+                      
   }
 `;
 
@@ -161,6 +217,15 @@ export const Total = styled.div`
   strong {
     font-size: 28px;
     margin-left: 5px;
+  }
+  @media screen and (max-width: 425px){
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+      
+      strong{
+        font-size: 22px;
+      }
   }
 `;
 
@@ -216,6 +281,27 @@ export const Wrapper = styled.div`
     font-family: ${mixins.fonts.normal};
     color: ${mixins.colors.darkgray};
   }
+  @media screen and (max-width: 425px){
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 18rem;
+    height: 21rem;
+
+      img{
+        height: 75px;
+        width: 75px;
+        align-self: center;
+      }
+        h1{
+          font-size: 18px;
+          padding: 0.1rem;
+        }
+          h2{
+            font-size: 13px;
+          }
+
+    }
 `;
 
 // Saida  da Caixa de finalização de pedido
@@ -244,5 +330,9 @@ transition: 0.2s;
     &:disabled {
     background-color: ${mixins.colors.buttoncolor};
     cursor: not-allowed;
+    }
+    @media screen and (max-width: 425px){
+    margin-top: 1rem;
+    width: 80%;
     }
 `
