@@ -100,20 +100,39 @@ export const Container = styled.div`
 
 export const ContainerCard = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   margin: 2rem;
   padding: 1rem;
   justify-content: center;
 
-  .MuiPagination-root{
+  .MuiPagination-root {
     margin-top: 2.5rem;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
 export const Top = styled.div`
   button {
-   background: gray;
+    background: gray;
     font-size: 1.5rem;
     padding: 0.4rem 1rem 0.4rem;
     border-radius: 0.2rem;
