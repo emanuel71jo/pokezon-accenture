@@ -38,6 +38,7 @@ interface IPokemon {
 interface IItemsShopping {
   item: IPokemon;
   count: number;
+  subTotal: string;
 }
 
 interface ShoppingContextData {
@@ -46,6 +47,7 @@ interface ShoppingContextData {
   removeItemFromShopping: (item: IPokemon) => void;
   removeAllItemFromShopping: (item: IPokemon) => void;
   getTotalItems: () => number;
+  total: string;
 }
 
 export const ShoppingContext = createContext({} as ShoppingContextData);

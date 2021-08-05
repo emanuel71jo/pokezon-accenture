@@ -23,6 +23,13 @@ import {
 interface IPokemon {
   name: string;
   url: string;
+  types: {
+    types: Array<{
+      type: {
+        name: string;
+      };
+    }>;
+  };
 }
 
 export function Home() {
@@ -31,6 +38,7 @@ export function Home() {
   const [pagePokemon, setPagePokemons] = useState<Array<IPokemon>>([]);
   const [filteredPokemons, setFilteredPokemons] = useState<Array<IPokemon>>([]);
   const [loading, setLoading] = useState(false);
+  const [typeSelected, setTypeSelected] = useState("Todos");
 
   const [offset, setOffset] = useState(0);
   const [query, setQuery] = useState<string>("");
@@ -40,10 +48,21 @@ export function Home() {
     setLoading(true);
     api
       .get<{ results: Array<IPokemon> }>(`/pokemon?limit=898&offset=0`)
-      .then((response) => {
-        setPokemons(response.data.results);
-        setFilteredPokemons(response.data.results);
-        setLoading(false);
+      .then(async (response) => {
+        const pokemons = response.data.results.map(async (pokemon) => {
+          const types = await getTypesPokemon(pokemon.url);
+
+          return {
+            ...pokemon,
+            types,
+          };
+        });
+
+        await Promise.all(pokemons).then((response) => {
+          setPokemons(response);
+          setFilteredPokemons(response);
+          setLoading(false);
+        });
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -59,16 +78,47 @@ export function Home() {
 
   useEffect(() => {
     setLoading(true);
-    if (query === "") setFilteredPokemons(pokemons);
-    else
-      setFilteredPokemons(
-        pokemons.filter((pokemon) =>
-          pokemon.name.toUpperCase().includes(query.toUpperCase())
-        )
+    let pokemonsToShow: IPokemon[];
+
+    if (pokemons.length === 0) return;
+
+    if (query === "") {
+      pokemonsToShow = pokemons.filter(
+        (pokemon) =>
+          typeSelected === "Todos" ||
+          pokemon.types.types.find(
+            (type) =>
+              type.type.name.toUpperCase() === typeSelected.toUpperCase()
+          )
       );
+    } else {
+      pokemonsToShow = pokemons.filter(
+        (pokemon) =>
+          pokemon.name.toUpperCase().includes(query.toUpperCase()) &&
+          (typeSelected === "Todos" ||
+            pokemon.types.types.find(
+              (type) =>
+                type.type.name.toUpperCase() === typeSelected.toUpperCase()
+            ))
+      );
+    }
+
     setLoading(false);
+    setFilteredPokemons(pokemonsToShow);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, [query, typeSelected]);
+
+  const getTypesPokemon = async (url: string) => {
+    const response = await api.get<{
+      types: Array<{
+        type: {
+          name: string;
+        };
+      }>;
+    }>(url);
+
+    return response.data;
+  };
 
   const onPaginationClick = (
     event: React.ChangeEvent<unknown>,
@@ -82,6 +132,7 @@ export function Home() {
   };
 
   const typesButtons = [
+    "Todos",
     "Fire",
     "Dragon",
     "Bug",
@@ -120,7 +171,13 @@ export function Home() {
         </Input>
         <ButtonsTypes>
           {typesButtons.map((type) => (
-            <TypeButton color={type}> {type} </TypeButton>
+            <TypeButton
+              color={type}
+              disabled={typeSelected === type}
+              onClick={() => setTypeSelected(type)}
+            >
+              {type}
+            </TypeButton>
           ))}
         </ButtonsTypes>
       </Search>
@@ -128,6 +185,8 @@ export function Home() {
         <Wrapper>
           {loading ? (
             <ReactLoading type={"spinningBubbles"} color={"#000"} />
+          ) : pagePokemon.length === 0 ? (
+            <h1>Nenhum pokémon encontrado</h1>
           ) : (
             pagePokemon.map((pokemon, index) => (
               <PokemonCard key={index} pokemon={pokemon} />

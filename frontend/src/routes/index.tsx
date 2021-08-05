@@ -27,11 +27,11 @@ function Routes() {
       <Header />
       <Styled.PageLayout>
         <Switch>
-          {auth === "" && <Route exact path="/" component={Login} />}
           <Route exact path={"/home"} component={Home} />
+          {auth === "" && <Route exact path="/login" component={Login} />}
           <Route exact path="/pokecart" component={PokeCart} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/Pedidos" component={Pedidos} />
+          <Route exact path="/orders" component={Pedidos} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect exact from="/" to="/home" />

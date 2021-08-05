@@ -49,7 +49,7 @@ export function Header() {
           {auth === "" ? (
             <button
               onClick={() => {
-                history.push("/");
+                history.push("/login");
               }}
               data-title="Login"
             >
@@ -59,7 +59,7 @@ export function Header() {
             <button
               onClick={() => {
                 signOut();
-                history.push("/");
+                history.push("/login");
               }}
               data-title="Sair"
             >

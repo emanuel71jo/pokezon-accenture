@@ -38,7 +38,7 @@ const handleBackgroundType = (color: string) => {
     case "Psychic":
       return `${mixins.colorspokemons.psychic}`;
     default:
-      return `${mixins.colors.gray}`;
+      return `${mixins.colors.darkgray}`;
   }
 };
 
@@ -50,15 +50,23 @@ export const TypeButton = styled.button`
   color: white;
   border: none;
   margin-bottom: 0.4rem;
+  align-self: center;
+
+  opacity: 0.6;
 
   &:hover:not(:disabled) {
     opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 1;
   }
 `;
 
 export const Search = styled.div`
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 5rem;
   margin-left: 5.5rem;
   margin-right: 5.5rem;
@@ -74,6 +82,7 @@ export const Input = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 4px;
   input {
     height: 1.8rem;
     padding: 0.4rem;
@@ -85,11 +94,21 @@ export const Input = styled.div`
 `;
 
 export const ButtonsTypes = styled.div`
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  align-items: center;
+  justify-content: center;
 
-  @media screen and (max-width: 425px) {
-    width: 100%;
-    margin: 2rem 0 0;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

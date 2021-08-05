@@ -136,7 +136,7 @@ export function SignUp() {
         <Button type="submit" disabled={isDisabled}>
           Iniciar jornada
         </Button>
-        <SignIn to="/">Já tem uma conta? Entre agora!</SignIn>
+        <SignIn to="/login">Já tem uma conta? Entre agora!</SignIn>
       </Form>
     </Container>
   );

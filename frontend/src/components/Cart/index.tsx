@@ -5,6 +5,8 @@ import {
   MdDelete,
   MdRemoveCircleOutline,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import { useShopping } from "../../hooks/useShopping";
 import {
   Button,
@@ -23,7 +25,10 @@ export function Cart() {
     addItemToShopping,
     removeAllItemFromShopping,
     removeItemFromShopping,
+    total,
   } = useShopping();
+
+  const { auth } = useAuth();
 
   const [showModal, setShowModal] = useState(false);
 
@@ -31,23 +36,32 @@ export function Cart() {
 
   return (
     <Container>
-      {/**
-       * Modal de finalização de pedido
-       */}
       {showModal && (
         <Modal>
           <Wrapper>
             <ButtonExitModal onClick={handleToogleShowModal}>
               <FiX color="black" size="1.3rem" />
             </ButtonExitModal>
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/814.png" />
-            <h1>Compra realizada com sucesso!</h1>
+            <img
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/814.png"
+              alt="Pokemon compra finalizada"
+            />
+            <h1>
+              {auth === ""
+                ? "Ops!! Aconteceu um problema"
+                : "Compra realizada com sucesso!"}
+            </h1>
             <h2>
-              Em breve você receberá os seus pokémons para iniciar sua jornada,
-              fique atento.
+              {auth === ""
+                ? "Para finalizar a sua compra você precisa está autenticado."
+                : "Em breve você receberá os seus pokémons para iniciar sua jornada, fique atento."}
             </h2>
             <Button>
-              <a href="http://localhost:3000/home">Voltar para tela inicial</a>
+              {auth === "" ? (
+                <Link to="/login">Ir para a tela de Login</Link>
+              ) : (
+                <Link to="/home">Voltar para tela inicial</Link>
+              )}
             </Button>
           </Wrapper>
         </Modal>
@@ -100,7 +114,7 @@ export function Cart() {
                   </div>
                 </td>
                 <td>
-                  <h2>R$ 10000</h2>
+                  <h2>{item.subTotal}</h2>
                 </td>
                 <td>
                   <button
@@ -121,7 +135,7 @@ export function Cart() {
           </button>
           <Total>
             <span>TOTAL</span>
-            <strong>R$ 1000,00</strong>
+            <strong>{total}</strong>
           </Total>
         </footer>
       </CartTable>

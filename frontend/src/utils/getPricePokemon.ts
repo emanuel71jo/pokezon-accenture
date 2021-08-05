@@ -34,7 +34,8 @@ type TypePokemon = {
 export function getPricePokemon(
   ability: number,
   stats: Array<Stat>,
-  types: Array<TypePokemon>
+  types: Array<TypePokemon>,
+  multiplier = 1
 ): string {
   const WEIGHT_ABILITY = 70;
   const STAT_BASE = 80;
@@ -54,9 +55,42 @@ export function getPricePokemon(
   );
 
   return (
-    3 * WEIGHT_ABILITY * ability +
-    3 * STAT_BASE * statsTotalValue +
-    2 * EFFORT * effortTotalValue +
-    2 * typeTotalValue
+    (3 * WEIGHT_ABILITY * ability +
+      3 * STAT_BASE * statsTotalValue +
+      2 * EFFORT * effortTotalValue +
+      2 * typeTotalValue) *
+    multiplier
   ).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+}
+
+export function getPricePokemonValue(
+  ability: number,
+  stats: Array<Stat>,
+  types: Array<TypePokemon>,
+  multiplier = 1
+): number {
+  const WEIGHT_ABILITY = 70;
+  const STAT_BASE = 80;
+  const EFFORT = 60;
+
+  const statsTotalValue = stats.reduce(
+    (total, item) => (total += item.base_stat),
+    0
+  );
+  const effortTotalValue = stats.reduce(
+    (total, item) => (total += item.effort),
+    0
+  );
+  const typeTotalValue = types.reduce(
+    (total, item) => (total += valueType[item.type.name]),
+    0
+  );
+
+  return (
+    (3 * WEIGHT_ABILITY * ability +
+      3 * STAT_BASE * statsTotalValue +
+      2 * EFFORT * effortTotalValue +
+      2 * typeTotalValue) *
+    multiplier
+  );
 }
