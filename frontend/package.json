@@ -16,6 +16,7 @@
     "@types/styled-components": "^5.1.11",
     "axios": "^0.21.1",
     "date-fns": "^2.23.0",
+    "express": "^4.17.1",
     "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",
     "polished": "^4.1.3",

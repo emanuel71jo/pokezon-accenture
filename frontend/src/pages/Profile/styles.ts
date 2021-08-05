@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
 export const ContainerProfile = styled.div`
-  height: 100%;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h2 {
     margin-bottom: 1rem;

@@ -5,9 +5,11 @@ export const ContainerProfile = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   width: 70%;
+
+  min-height: 60vh;
   h2 {
     margin-bottom: 1rem;
     color: ${mixins.colors.gray};
@@ -41,6 +43,7 @@ export const Dados = styled.div`
   width: 40rem;
   border-radius: 0.3rem;
   border: 0.1rem solid #d8d8d8;
+  padding: 1rem;
   @media screen and (max-width: 425px) {
     margin-bottom: 2rem;
     width: 100%;

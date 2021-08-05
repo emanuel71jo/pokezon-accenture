@@ -146,6 +146,8 @@ export function Pedidos() {
               ))}
             </>
           ))}
+
+          {orders.length === 0 && <h3>Nenhum pedido encontrado</h3>}
         </Dados>
       </Container>
     </ContainerProfile>
