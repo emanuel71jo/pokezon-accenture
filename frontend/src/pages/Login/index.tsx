@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import { LoginSchema } from '../../validations/validationLogin'
 import { Button, Container, Error, Form, Input, SignUp, Title } from './styles'
+import backgroundlogin from '../../assets/backgroundlogin.png'
 
 export function Login() {
   const history = useHistory()
@@ -26,7 +27,9 @@ export function Login() {
     !formik.isValid
 
   return (
-    <Container>
+
+      <Container>
+      <img src={backgroundlogin} alt='imagem Pokémon'/>
       <Form onSubmit={formik.handleSubmit}>
         <Title>Faça o login</Title>
         <Input
