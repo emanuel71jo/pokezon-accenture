@@ -4,9 +4,11 @@ import { useDropzone } from "react-dropzone";
 import { useHistory } from "react-router-dom";
 import ProfileImg from "../../assets/profile-img.png";
 import { SignUpSchema } from "../../validations/validationSignUp";
+import backgroundsignup from '../../assets/backgroundsignup.jpg'
 import {
   Button,
   Container,
+  Img,
   ContainerInput,
   Error,
   Form,
@@ -64,6 +66,9 @@ export function SignUp() {
 
   return (
     <Container>
+      <Img>
+      <img src={backgroundsignup} alt='imagem-Pokémon'/>
+      </Img>
       <Form onSubmit={formik.handleSubmit}>
         <Title>Faça seu cadastro</Title>
         <WrapperImg {...getRootProps()}>
