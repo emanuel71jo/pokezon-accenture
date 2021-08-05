@@ -12,7 +12,7 @@ export const Container = styled.div`
   flex-direction: row;
   padding: 4rem 4rem 4rem 0rem;
 
-  @media screen and (max-width: 425px){
+  @media screen and (max-width: 425px) {
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -61,6 +61,9 @@ export const Button = styled.button`
   font-size: ${mixins.typography.paragraph};
   font-family: ${mixins.fonts.normal};
   background-color: ${mixins.colors.buttoncolor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
   height: 3rem;
@@ -108,6 +111,8 @@ export const InfoInputText = styled.p`
 
 export const ProfileImage = styled.img`
   width: 4rem;
+  height: 4rem;
+  object-fit: cover;
   border-radius: 2.5rem;
   background-color: ${mixins.colors.white};
 `;
@@ -148,8 +153,7 @@ export const Img = styled.div`
   justify-content: left;
   padding: 4rem 8rem 4rem 2rem;
 
-  @media screen and (max-width: 425px){
+  @media screen and (max-width: 425px) {
     display: none;
   }
-
-`
+`;

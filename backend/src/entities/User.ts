@@ -26,6 +26,9 @@ class User {
   @Column()
   lastName: string;
 
+  @Column()
+  fileName: string;
+
   @CreateDateColumn()
   created_at: Date;
 

@@ -2,12 +2,21 @@ import { Sidebar, Imagem, ContainerImg } from "./styles";
 import { NavLink } from "react-router-dom";
 import img from "../../assets/p.jpg";
 
-export function SidebarProfile() {
+export function SidebarProfile({
+  fileName,
+  userName,
+}: {
+  fileName?: string;
+  userName: string;
+}) {
   return (
     <Sidebar>
       <ContainerImg>
-        <Imagem src={img} alt="Foto de perfil" />
-        <span>Olá, Bárbara!</span>
+        <Imagem
+          src={!!fileName ? `http://localhost:3333/uploads/${fileName}` : img}
+          alt="Foto de perfil"
+        />
+        <span>Olá, {userName}!</span>
       </ContainerImg>
 
       <ul>

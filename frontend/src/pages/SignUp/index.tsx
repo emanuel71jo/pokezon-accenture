@@ -4,7 +4,8 @@ import { useDropzone } from "react-dropzone";
 import { useHistory } from "react-router-dom";
 import ProfileImg from "../../assets/profile-img.png";
 import { SignUpSchema } from "../../validations/validationSignUp";
-import backgroundsignup from '../../assets/backgroundsignup.jpg'
+import backgroundsignup from "../../assets/backgroundsignup.jpg";
+import ReactLoading from "react-loading";
 import {
   Button,
   Container,
@@ -20,11 +21,16 @@ import {
   WrapperFields,
   WrapperImg,
 } from "./styles";
+import { app } from "../../services/api";
+import { useToasts } from "react-toast-notifications";
+import { mixins } from "../../styles/mixins";
 
 export function SignUp() {
   const history = useHistory();
+  const { addToast } = useToasts();
 
   const [file, setFile] = useState<any>();
+  const [loading, setLoading] = useState(false);
 
   const onDrop = useCallback((acceptedFiles) => {
     setFile(acceptedFiles[0]);
@@ -45,7 +51,43 @@ export function SignUp() {
       lastName: "",
     },
     onSubmit: async (values) => {
-      history.push("/");
+      setLoading(true);
+      const formData = new FormData();
+
+      formData.append("email", values.email);
+      formData.append("password", values.password);
+      formData.append("firstName", values.firstName);
+      formData.append("lastName", values.lastName);
+      formData.append("avatar", file);
+
+      try {
+        await app.post("/users", formData);
+
+        addToast("Cadastro realizado com sucesso", {
+          appearance: "success",
+          autoDismiss: true,
+        });
+        history.push("/login");
+      } catch (error) {
+        addToast(
+          "Ops!! Aconteceu um erro ao realizar seu cadastro. Tente novamente!!",
+          {
+            appearance: "error",
+            autoDismiss: true,
+          }
+        );
+      } finally {
+        setLoading(false);
+        formik.setValues({
+          email: "",
+          password: "",
+          confirmPassword: "",
+          firstName: "",
+          lastName: "",
+        });
+
+        setFile(null);
+      }
     },
     validationSchema: SignUpSchema,
   });
@@ -67,7 +109,7 @@ export function SignUp() {
   return (
     <Container>
       <Img>
-      <img src={backgroundsignup} alt='imagem-Pokémon'/>
+        <img src={backgroundsignup} alt="imagem-Pokémon" />
       </Img>
       <Form onSubmit={formik.handleSubmit}>
         <Title>Faça seu cadastro</Title>
@@ -138,8 +180,12 @@ export function SignUp() {
         {formik.errors.confirmPassword && formik.touched.confirmPassword && (
           <Error>{formik.errors.confirmPassword}</Error>
         )}
-        <Button type="submit" disabled={isDisabled}>
-          Iniciar jornada
+        <Button type="submit" disabled={loading || isDisabled}>
+          {loading ? (
+            <ReactLoading type={"cylon"} color={mixins.colors.secondary} />
+          ) : (
+            "Iniciar jornada"
+          )}
         </Button>
         <SignIn to="/login">Já tem uma conta? Entre agora!</SignIn>
       </Form>

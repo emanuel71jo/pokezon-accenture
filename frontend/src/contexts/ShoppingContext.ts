@@ -47,6 +47,7 @@ interface ShoppingContextData {
   removeItemFromShopping: (item: IPokemon) => void;
   removeAllItemFromShopping: (item: IPokemon) => void;
   getTotalItems: () => number;
+  handleSubmit: () => void;
   total: string;
 }
 

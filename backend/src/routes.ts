@@ -4,6 +4,7 @@ import { ItemsController } from "./controllers/ItemsController";
 import { OrdersController } from "./controllers/OrdersController";
 import { UsersController } from "./controllers/UsersController";
 import { checkJwt } from "./middlewares/checkJwtMiddleware";
+import { uploads } from "./middlewares/multerMiddleware";
 
 const usersController = new UsersController();
 const authController = new AuthController();
@@ -13,8 +14,7 @@ const itemsController = new ItemsController();
 const routes = Router();
 
 routes.post("/signIn", authController.signIn);
-
-routes.post("/users", usersController.create);
+routes.post("/users", uploads.single("avatar"), usersController.create);
 
 routes.use(checkJwt);
 

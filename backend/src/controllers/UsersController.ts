@@ -25,6 +25,7 @@ class UsersController {
 
   async create(req: Request, res: Response): Promise<Response> {
     const { email, password, firstName, lastName } = req.body;
+    const { filename } = req.file;
 
     const usersService = new UsersService();
 
@@ -36,7 +37,8 @@ class UsersController {
       email,
       password,
       firstName,
-      lastName
+      lastName,
+      filename
     );
 
     return res.json(userCreated);

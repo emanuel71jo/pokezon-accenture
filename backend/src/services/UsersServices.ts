@@ -12,7 +12,14 @@ class UsersService {
 
   async listAll(): Promise<User[]> {
     const users = await this.usersRepository.find({
-      select: ["id", "firstName", "lastName", "email", "created_at"],
+      select: [
+        "id",
+        "firstName",
+        "lastName",
+        "email",
+        "fileName",
+        "created_at",
+      ],
     });
 
     return users;
@@ -21,7 +28,14 @@ class UsersService {
   async getById(id: string): Promise<User> {
     const user = await this.usersRepository.findOne({
       where: { id },
-      select: ["id", "firstName", "lastName", "email", "created_at"],
+      select: [
+        "id",
+        "firstName",
+        "lastName",
+        "fileName",
+        "email",
+        "created_at",
+      ],
     });
 
     return user;
@@ -31,7 +45,8 @@ class UsersService {
     email: string,
     password: string,
     firstName: string,
-    lastName: string
+    lastName: string,
+    fileName: string
   ): Promise<User> {
     const userExists = await this.usersRepository.findOne({ email });
 
@@ -41,6 +56,7 @@ class UsersService {
     user.email = email;
     user.firstName = firstName;
     user.lastName = lastName;
+    user.fileName = fileName;
     user.hashPassword(password);
 
     const userCreated = this.usersRepository.create(user);

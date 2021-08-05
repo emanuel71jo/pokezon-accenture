@@ -29,10 +29,16 @@ export function Cart() {
   } = useShopping();
 
   const { auth } = useAuth();
+  const { handleSubmit } = useShopping();
 
   const [showModal, setShowModal] = useState(false);
 
-  const handleToogleShowModal = () => setShowModal((oldValue) => !oldValue);
+  const handleToogleShowModal = async () => {
+    if (auth !== "") {
+      handleSubmit();
+    }
+    setShowModal((oldValue) => !oldValue);
+  };
 
   return (
     <Container>

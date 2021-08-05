@@ -17,7 +17,7 @@ import { useAuth } from "../hooks/useAuth";
 
 // Styles
 import { Styled } from "./styles";
-import Pedidos from "../components/Pedidos";
+import Pedidos from "../pages/Pedidos";
 
 function Routes() {
   const { auth } = useAuth();

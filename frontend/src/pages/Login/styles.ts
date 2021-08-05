@@ -12,21 +12,20 @@ export const Container = styled.div`
   flex-direction: row;
   padding: 4rem 4rem 4rem 0rem;
 
-  img{
+  img {
     width: 52rem;
     height: 32rem;
     //left:0;
-    }
-  @media screen and (max-width: 425px){
+  }
+  @media screen and (max-width: 425px) {
     justify-content: center;
     align-items: center;
     padding: 2rem;
     background-color: ${mixins.colors.background};
-    img{
-      display:none;
+    img {
+      display: none;
     }
-    
-    }
+  }
 `;
 
 export const Form = styled.form`
@@ -74,6 +73,10 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover:not(:disabled) {
     opacity: 0.8;

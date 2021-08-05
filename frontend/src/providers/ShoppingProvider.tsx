@@ -6,6 +6,7 @@ import {
   getPricePokemon,
   getPricePokemonValue,
 } from "../utils/getPricePokemon";
+import { app } from "../services/api";
 
 type ShoppingProviderProps = {
   children: ReactNode;
@@ -166,6 +167,18 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
     return shopping.length;
   }
 
+  async function handleSubmit() {
+    await app.post("/orders", {
+      items: shopping.map((item) => ({
+        pokeId: item.item.id,
+        pokeName: item.item.name,
+      })),
+    });
+
+    setShopping([]);
+    setTotal("R$ 0,00");
+  }
+
   return (
     <ShoppingContext.Provider
       value={{
@@ -175,6 +188,7 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
         removeAllItemFromShopping,
         getTotalItems,
         total,
+        handleSubmit,
       }}
     >
       {children}
