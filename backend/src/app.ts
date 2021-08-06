@@ -10,7 +10,7 @@ import { AppError } from "./errors/AppError";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use("/uploads", express.static(resolve(__dirname, "..", "uploads")));
 app.use(routes);

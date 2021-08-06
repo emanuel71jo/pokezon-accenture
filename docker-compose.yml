@@ -5,7 +5,7 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
-    command: yarn start
+    command: node server.js
   server:
     build: ./backend
     ports:
