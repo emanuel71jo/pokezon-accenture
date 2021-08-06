@@ -14,7 +14,7 @@ export function SidebarProfile({
       <ContainerImg>
         <Imagem
           src={
-            !!fileName ? `http://52.202.198.72/:3333/uploads/${fileName}` : img
+            !!fileName ? `http://52.202.198.72:3333/uploads/${fileName}` : img
           }
           alt="Foto de perfil"
         />
